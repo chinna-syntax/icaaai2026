@@ -13,6 +13,34 @@
   <!-- Compiled Tailwind CSS Build -->
   <link rel="stylesheet" href="css/tailwind.css">
 
+  <!-- Tailwind CDN & Config Injection -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            teal: {
+              active: '#b45309',
+              light: '#fef3c7'
+            },
+            neutralDark: '#111827',
+            neutralLight: '#f4f6f8',
+            lavender: '#c8a2ca',
+            charcoal: '#212529',
+            slateGray: '#4A4A4A',
+            metaGray: '#555555',
+            accentRed: '#D9534F',
+            accentCoral: '#E07A5F'
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,25 +166,22 @@
   <nav id="main-header" class="fixed top-0 left-0 w-full z-50 py-4 border-b border-transparent transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Mobile View Navbar Header (Collapses Logo Container smoothly on scroll) -->
-      <div class="flex lg:hidden flex-col items-center justify-between w-full">
-        <!-- Logo container (Collapses smoothly) -->
-        <div id="mobile-brand-wrap" class="flex items-center justify-between w-full pb-2 transition-all duration-300">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full bg-white p-0.5 border overflow-hidden">
-              <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
-            </div>
-            <div class="text-[10px] text-white font-extrabold tracking-wider uppercase">ICAAAI 2026 • SRKREC</div>
+      <!-- Mobile View Navbar Header -->
+      <div class="flex lg:hidden items-center justify-between w-full py-1">
+        <!-- Logo and Brand Title (Stay in navbar permanently) -->
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white p-0.5 border overflow-hidden">
+            <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
+          <div class="text-[10px] text-white font-extrabold tracking-wider uppercase">ICAAAI 2026 • SRKREC</div>
+        </div>
+        
+        <!-- Founder Portrait & Toggle Menu Button -->
+        <div class="flex items-center gap-2">
           <!-- Founder Portrait mobile -->
           <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20">
             <img src="assets/srkrFounderNObg.png" alt="Founder Portrait mobile" class="w-full h-full object-cover fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
-        </div>
-        
-        <!-- Always visible compact bar containing mobile menu button -->
-        <div class="flex items-center justify-between w-full pt-1">
-          <span class="text-[10px] text-teal-active uppercase tracking-widest font-bold">Menu Navigation</span>
           <button id="mobile-menu-btn" type="button" class="w-10 h-10 flex items-center justify-center rounded text-white hover:text-teal-active focus:outline-none transition-colors">
             <svg id="menu-icon-closed" class="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -249,7 +274,7 @@
       </p>
       
       <!-- Main Centered Headline -->
-      <h1 class="hero-text-shadow text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase leading-none">
+      <h1 class="hero-text-shadow text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase leading-none" style="color: #ffffff !important;">
         ICAAAI - 2026
       </h1>
       
@@ -1536,7 +1561,7 @@
   <div id="speaker-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
     <div class="absolute inset-0 overflow-hidden flex items-center justify-center p-4">
       <!-- Background overlay -->
-      <div id="speaker-overlay" class="absolute inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade" onclick="closeSpeakerModal()"></div>
+      <div id="speaker-overlay" class="absolute inset-0 modal-backdrop-fade" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(17, 24, 27, 0.6);" onclick="closeSpeakerModal()"></div>
 
       <!-- Center Modal Box (Academic directory style biography) -->
       <div class="relative bg-white w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-slate-200 z-10 flex flex-col max-h-[85vh] modal-panel-scale">
@@ -1581,7 +1606,7 @@
     <div class="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       
       <!-- Background overlay -->
-      <div id="bank-overlay" class="fixed inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade" aria-hidden="true"></div>
+      <div id="bank-overlay" class="fixed inset-0 modal-backdrop-fade" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(17, 24, 27, 0.6);" aria-hidden="true"></div>
 
       <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">&#8203;</span>
 
@@ -1675,7 +1700,7 @@
 
   <!-- Conference Brochure PDF Overlay Modal -->
   <div id="brochure-modal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
-    <div class="absolute inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade flex items-center justify-center p-4">
+    <div class="absolute inset-0 modal-backdrop-fade flex items-center justify-center p-4" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(17, 24, 27, 0.6);">
       <!-- Background click dismiss overlay -->
       <div id="brochure-overlay" class="absolute inset-0" onclick="closeBrochureModal()"></div>
       
@@ -1709,7 +1734,7 @@
 
   <!-- Image Lightbox Modal -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
-    <div id="lightbox-overlay" class="absolute inset-0 bg-neutralDark bg-opacity-95 modal-backdrop-fade flex items-center justify-center p-4">
+    <div id="lightbox-overlay" class="absolute inset-0 modal-backdrop-fade flex items-center justify-center p-4" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(17, 24, 27, 0.85);">
       <button onclick="closeLightbox()" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none bg-slate-900/40 p-2.5 rounded-full z-20">
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -1812,7 +1837,6 @@
       // B. Symmetrical Sticky Navbar Scroll-Linked Collapse Toggles
       try {
         const header = document.getElementById('main-header');
-        const mobileBrandWrap = document.getElementById('mobile-brand-wrap');
         const navLinks = document.querySelectorAll('.nav-link');
         
         if (header) {
@@ -1826,25 +1850,12 @@
                   header.style.webkitBackdropFilter = 'blur(16px)';
                   header.classList.remove('py-4', 'border-transparent');
                   header.classList.add('py-2', 'border-white/5', 'shadow-md', 'scrolled');
-                  
-                  if (mobileBrandWrap) {
-                    mobileBrandWrap.style.opacity = '0';
-                    mobileBrandWrap.style.maxHeight = '0px';
-                    mobileBrandWrap.style.paddingBottom = '0px';
-                    mobileBrandWrap.style.overflow = 'hidden';
-                  }
                 } else {
                   header.style.background = 'transparent';
                   header.style.backdropFilter = 'none';
                   header.style.webkitBackdropFilter = 'none';
                   header.classList.remove('py-2', 'border-white/5', 'shadow-md', 'scrolled');
                   header.classList.add('py-4', 'border-transparent');
-                  
-                  if (mobileBrandWrap) {
-                    mobileBrandWrap.style.opacity = '1';
-                    mobileBrandWrap.style.maxHeight = '50px';
-                    mobileBrandWrap.style.paddingBottom = '8px';
-                  }
                 }
                 ticking = false;
               });
