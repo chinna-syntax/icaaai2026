@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official Portal of the 3rd International Conference on Algorithms in Advanced Artificial Intelligence (ICAAAI 2026) hosted by the Department of CSE at SRKR Engineering College.">
+  <title>ICAAAI 2026 | International Conference on Algorithms in Advanced Artificial Intelligence</title>
+  
+  <!-- Preload Critical Hero Assets -->
+  <link rel="preload" href="assets/hero/hero_1.webp" as="image">
+  <link rel="preload" href="assets/hero/hero_2.webp" as="image">
+
+  <!-- Compiled Tailwind CSS Build -->
+  <link rel="stylesheet" href="css/tailwind.css">
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for modern academic visuals -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Typographic Constraints & Scale Definitions */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937; /* Locked Primary Text */
+      background-color: #f4f6f8; /* Locked Website Background */
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: #1f2937; /* Locked Primary Text */
+      letter-spacing: -0.5px;
+    }
+ 
+    li, p, td, th {
+      font-family: 'Inter', sans-serif;
+    }
+ 
+    /* Premium Global Card Design System: Neumorphic Soft Lift Shadows & separation */
+    .premium-card {
+      background-color: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.6); /* Soft borders */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 1px 8px rgba(0, 0, 0, 0.02);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-3px); /* Subtle Translate Lift */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 12px rgba(0, 0, 0, 0.03);
+    }
+ 
+    /* Swipe track gallery configurations */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+ 
+    /* High-Performance Inertial Reveal Physics */
+    .scroll-reveal {
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .scroll-reveal.reveal-init {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .scroll-reveal.reveal-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Infinite loop cinematic crossfade mechanics (opacity transitions only, no zoom chaos) */
+    .hero-slide {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    /* Strong text shadows to maintain white text legibility against bright hero backgrounds */
+    .hero-text-shadow {
+      text-shadow: 0 4px 16px rgba(17, 24, 27, 0.95), 0 2px 4px rgba(17, 24, 27, 0.85);
+    }
+
+    /* Premium smooth image fade-in transition system for lazy loading */
+    .fade-in-img {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .fade-in-img.loaded {
+      opacity: 1;
+    }
+
+    /* Modal premium smooth transition classes */
+    .modal-backdrop-fade {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+    .modal-panel-scale {
+      transform: scale(0.95);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out;
+    }
+    .modal-active .modal-backdrop-fade {
+      opacity: 1;
+    }
+    .modal-active .modal-panel-scale {
+      transform: scale(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="selection:bg-teal-active selection:text-white overflow-x-hidden">
+
+  <!-- ==================== DESKTOP SYMMETRICAL DUAL BODY LOGOS ==================== -->
+  <!-- Left Margin Body Anchor: Floating CSE Department Logo circle (Fixed relative to viewport) -->
+  <div class="hidden lg:block fixed left-8 top-1/3 z-30 w-16 h-16 rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="Department of CSE">
+    <img src="assets/sponsors/badge_e93e8b0bb2.webp" alt="CSE Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+  </div>
+
+  <!-- Right Margin Body Anchor: Floating ICAAAI Conference Logo circle (Fixed relative to viewport) -->
+  <div class="hidden lg:block fixed right-8 top-1/3 z-30 w-16 h-16 rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="ICAAAI Conference">
+    <img src="assets/sponsors/badge_4073bf5cd0.webp" alt="ICAAAI Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+  </div>
+
+
+  <!-- Sticky Navbar (Symmetrical Premium Dark Layout - Transparent to Glass transition) -->
+  <nav id="main-header" class="fixed top-0 left-0 w-full z-50 py-4 border-b border-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Mobile View Navbar Header (Collapses Logo Container smoothly on scroll) -->
+      <div class="flex lg:hidden flex-col items-center justify-between w-full">
+        <!-- Logo container (Collapses smoothly) -->
+        <div id="mobile-brand-wrap" class="flex items-center justify-between w-full pb-2 transition-all duration-300">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-white p-0.5 border overflow-hidden">
+              <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <div class="text-[10px] text-white font-extrabold tracking-wider uppercase">ICAAAI 2026 • SRKREC</div>
+          </div>
+          <!-- Founder Portrait mobile -->
+          <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20">
+            <img src="assets/srkrFounderNObg.png" alt="Founder Portrait mobile" class="w-full h-full object-cover fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+        </div>
+        
+        <!-- Always visible compact bar containing mobile menu button -->
+        <div class="flex items-center justify-between w-full pt-1">
+          <span class="text-[10px] text-teal-active uppercase tracking-widest font-bold">Menu Navigation</span>
+          <button id="mobile-menu-btn" type="button" class="w-10 h-10 flex items-center justify-center rounded text-white hover:text-teal-active focus:outline-none transition-colors">
+            <svg id="menu-icon-closed" class="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-opened" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop View Navbar Header -->
+      <div class="hidden lg:flex items-center justify-between h-14">
+        <!-- Left Margin: Official SRKR Round Emblem Badge -->
+        <a href="#" class="flex items-center shrink-0">
+          <div class="w-9 h-9 rounded-full bg-white p-0.5 border border-white/40 shadow-md flex items-center justify-center overflow-hidden">
+            <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+        </a>
+
+        <!-- Center-Top Nav Menu Links (Symmetrical typography alignment) -->
+        <div class="flex items-center justify-center gap-8">
+          <a href="#" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">Home</a>
+          <a href="#about" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">About</a>
+          <a href="#speakers" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">Speakers</a>
+          <a href="#committees" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">Committees</a>
+          <a href="#timeline" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">Timeline</a>
+          <a href="#registration" class="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-teal-active transition-colors">Registration</a>
+        </div>
+
+        <!-- Right Margin: Action Triggers & Founder Portrait -->
+        <div class="flex items-center gap-4 shrink-0">
+          <!-- Teal CTA: Brochure -->
+          <button onclick="openBrochureModal()" class="bg-teal-active hover:bg-teal-active/90 text-white font-bold text-xs uppercase tracking-wider px-3.5 py-2 rounded transition-colors flex items-center gap-1.5 shadow-sm">
+            <i class="fa-regular fa-file-pdf"></i> Brochure
+          </button>
+          <!-- Coral CTA: Submit -->
+          <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-bold text-xs uppercase tracking-wider px-3.5 py-2 rounded transition-colors flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-paper-plane"></i> Submit
+          </a>
+          <!-- Founder Portrait -->
+          <div class="w-9 h-9 rounded-full bg-white p-0.5 border border-white/40 shadow-md flex items-center justify-center overflow-hidden" title="Founder Secretary S.R.K. Prasad Raju">
+            <img src="assets/srkrFounderNObg.png" alt="Founder Portrait" class="w-full h-full object-cover rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Dropdown Drawer Panel (Deep Slate) -->
+    <div id="mobile-menu-drawer" class="hidden lg:hidden bg-slate-950 border-t border-slate-900 transition-all duration-300">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="#" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white bg-slate-800/50">Home</a>
+        <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white hover:bg-slate-850">About</a>
+        <a href="#speakers" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white hover:bg-slate-850">Speakers</a>
+        <a href="#committees" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white hover:bg-slate-850">Committees</a>
+        <a href="#timeline" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white hover:bg-slate-850">Timeline</a>
+        <a href="#registration" class="mobile-nav-link block px-3 py-2.5 rounded text-sm font-semibold uppercase tracking-wider text-white/80 hover:text-white hover:bg-slate-850">Registration</a>
+        
+        <div class="pt-4 flex flex-col gap-3">
+          <button onclick="openBrochureModal(); document.getElementById('mobile-menu-drawer').classList.add('hidden');" class="w-full bg-teal-active text-white text-center py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow">
+            <i class="fa-regular fa-file-pdf mr-1"></i> Brochure
+          </button>
+          <a href="https://easychair.org/" target="_blank" rel="noopener" class="w-full bg-accentCoral text-white text-center py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow">
+            <i class="fa-solid fa-paper-plane mr-1"></i> Submit
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full-Screen Cinematic Background Hero Section (100vh, 100% Bright Images, No Mask) -->
+  <section class="relative h-screen w-full bg-neutralDark flex items-center justify-center overflow-hidden">
+    <!-- Cinematic Crossfade Background Engine (Looping precisely every 4000ms, fade transition only, no zoom chaos) -->
+    <div id="hero-slider" class="absolute inset-0 z-0">
+      <!-- Slide 1 -->
+      <div class="hero-slide active absolute inset-0 select-none bg-cover bg-center" style="background-image: url('assets/hero/hero_1.webp');"></div>
+      <!-- Slide 2 -->
+      <div class="hero-slide absolute inset-0 select-none bg-cover bg-center" style="background-image: url('assets/hero/hero_2.webp');"></div>
+    </div>
+
+    <!-- Soft, crisp lighting gradient overlay layer -->
+    <div class="absolute inset-0 z-10" style="background: linear-gradient(to bottom, rgba(17,24,27,0.35), rgba(17,24,27,0.5));"></div>
+
+    <!-- Hero Contents Container (Centered White Typography sit squarely inside clear space) -->
+    <div class="relative z-20 max-w-5xl mx-auto px-4 text-center select-text pt-24">
+      <!-- Sub-Header Tracking Pill -->
+      <p class="hero-text-shadow text-white text-xs sm:text-sm font-bold uppercase tracking-widest mb-6 animate-fade-in">
+        Algorithms in Advanced Artificial Intelligence
+      </p>
+      
+      <!-- Main Centered Headline -->
+      <h1 class="hero-text-shadow text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase leading-none">
+        ICAAAI - 2026
+      </h1>
+      
+      <!-- Date Track Line -->
+      <p class="hero-text-shadow text-white text-base sm:text-lg font-bold uppercase tracking-widest mb-6">
+        DECEMBER 11–13, 2026
+      </p>
+
+      <div class="w-16 h-[3px] bg-teal-active mx-auto mb-6 shadow-md"></div>
+
+      <!-- Host Subtitle -->
+      <p class="hero-text-shadow text-xs sm:text-sm text-white/95 max-w-3xl mx-auto leading-relaxed mb-12 uppercase tracking-wide font-medium">
+        DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING | SRKR ENGINEERING COLLEGE - BHIMAVARAM
+      </p>
+
+      <!-- Primary Symmetrical Redirect Actions (Pill shape, clean flat borders, event styling) -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane text-xs"></i> Submit Manuscript
+        </a>
+        <a href="javascript:void(0);" onclick="openBankModal()" class="bg-teal-active hover:bg-teal-active/90 text-white font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-credit-card text-xs"></i> Register Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MOBILE ADAPTIVE SYSTEM FOR DUAL BODY LOGOS ==================== -->
+  <!-- Renders immediately below the hero on mobile viewports, hidden on desktop -->
+  <div class="flex lg:hidden items-center justify-center gap-8 py-6 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="w-12 h-12 rounded-full border border-slate-200 bg-white p-0.5 flex items-center justify-center overflow-hidden shadow-sm">
+      <img src="assets/sponsors/badge_e93e8b0bb2.webp" alt="CSE Department Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+    </div>
+    <div class="w-12 h-12 rounded-full border border-slate-200 bg-white p-0.5 flex items-center justify-center overflow-hidden shadow-sm">
+      <img src="assets/sponsors/badge_4073bf5cd0.webp" alt="ICAAAI Conference Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+    </div>
+  </div>
+
+
+  <!-- Integrated Top Horizontal Running Link Container -->
+  <section class="bg-teal-900 border-y border-teal-800 text-white z-20 relative shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold tracking-wider text-white/95 divide-x divide-teal-700/50">
+        <a href="javascript:void(0);" onclick="openBrochureModal()" class="hover:text-teal-active transition-colors px-3 flex items-center gap-1.5"><i class="fa-regular fa-file-pdf"></i> ICAAAI-2026 Brochure - Click to view</a>
+        <a href="javascript:void(0);" onclick="openBankModal()" class="hover:text-teal-active transition-colors px-3">Registration Details</a>
+        <a href="https://easychair.org/" target="_blank" rel="noopener" class="hover:text-teal-active transition-colors px-3">Paper Submission</a>
+        <a href="#registration" class="hover:text-teal-active transition-colors px-3">Review Policy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (Pure plain paragraphs on a completely flat, non-boxed layout surface, soft off-white background) -->
+  <section id="about" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Inter-Tab Controls for Institution Details -->
+      <div class="max-w-3xl mx-auto mb-8 relative">
+        <div id="about-tabs-container" class="flex items-center justify-between border-b border-slate-200 relative pb-3">
+          <button id="about-tab-college" class="about-tab-btn flex-1 text-center py-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-teal-active transition-colors focus:outline-none">
+            SRKREC
+          </button>
+          <button id="about-tab-cse" class="about-tab-btn flex-1 text-center py-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none">
+            Department CSE
+          </button>
+          <button id="about-tab-conf" class="about-tab-btn flex-1 text-center py-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none">
+            ICAAAI Conference
+          </button>
+          
+          <!-- Dynamic Sliding Underline Indicator -->
+          <div id="tab-sliding-indicator" class="absolute bottom-0 h-[3px] bg-teal-active transition-all duration-300" style="width: 33.333%; left: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Tab Plain Content Framework (Flat layout, no borders or background boxes) -->
+      <div class="max-w-4xl mx-auto text-slateGray text-sm sm:text-base leading-relaxed space-y-6">
+        <!-- Content College -->
+        <div id="about-content-college" class="block space-y-6">
+          <h3 class="text-xl font-bold text-charcoal text-center mb-6">SRKREC</h3>
+          <p>
+            Sagi Rama Krishnam Raju Engineering College (SRKR), established in 1980, is one of Andhra Pradesh's first self-financing engineering institutions, dedicated to empowering rural students through technical education. With its 30-acre green campus, the college offers state-of-the-art facilities that foster an inclusive and culturally responsive learning environment. Over the years, SRKR has built a strong ethos of creativity, confidence, and logical thinking in its students, preparing them for nation-building and diverse careers.<br/><br/>The college's vision, inspired by its founder Sri Sagi Rama Krishnam Raju, continues under the leadership of Sri S. Prasad Raju, ensuring academic excellence. SRKR combines science, creativity, and critical thinking to address societal challenges, making it a hub for innovation and problem-solving. With 44 years of academic excellence, SRKR offers 12 B.Tech., 6 M.Tech., and 10 Ph.D. programs, alongside a B.B.A. program.<br/><br/>Accredited with an ‘A+’ Grade by NAAC and multiple NBA accredited B.Tech. programs, the institution is recognized by AICTE and UGC for its outstanding contributions to education and research. SRKR’s initiatives include the AICTE IDEA Lab emphasizing entrepreneurship, innovation, and skill development. Its 14 Centres of Excellence further drive research culture, solving societal challenges through research and development.
+          </p>
+        </div>
+
+        <!-- Content CSE -->
+        <div id="about-content-cse" class="hidden space-y-6">
+          <h3 class="text-xl font-bold text-charcoal text-center mb-6">Department CSE</h3>
+          <p>
+            The Department of Computer Science & Engineering (CSE) at Sagi Rama Krishnam Raju Engineering College, established in 1991, has grown into a leading hub for teaching, research, and industry collaboration.The department offers B.Tech programmes in CSE, Artificial Intelligence & Machine Learning, Computer Science & Design, and CSE (IoT & Cyber Security including Blockchain Technology), along with M.Tech in Computer Science & Technology and a Ph.D. programme. It also pioneers a Minor Degree in Quantum Technologies, aligned with India’s National Quantum Mission.<br/><br/>With a team of highly qualified faculty, the department is recognized as a Research Centre under JNTU Kakinada. Graduates are consistently placed in top multinational companies and product-based firms across domains such as software development, data science, cybersecurity, AI/ML, and cloud computing. The department has also hosted three international conferences and actively promotes innovation through hackathons, design sprints, and professional society activities.
+          </p>
+        </div>
+
+        <!-- Content Conference -->
+        <div id="about-content-conf" class="hidden space-y-6">
+          <h3 class="text-xl font-bold text-charcoal text-center mb-6">ICAAAI Conference</h3>
+          <p>
+            The 3rd International Conference on Algorithms in Advanced Artificial Intelligence (ICAAAI-2025) provides a global platform for researchers, academicians, and industry professionals to exchange knowledge and showcase innovations in Artificial Intelligence, Machine Learning, Data Science, and emerging computing technologies.<br/><br/>Building on the success of its previous editions, the conference emphasizes both theoretical advances and real-world applications across interdisciplinary domains.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Call-To-Action Row Component (Horizontal Symmetrical Realignment, Neumorphic Cards) -->
+  <section class="py-12 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Conference Brochure -->
+        <div onclick="openBrochureModal()" class="premium-card rounded-xl p-6 cursor-pointer flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded bg-red-50 text-red-600 flex items-center justify-center text-lg font-bold">
+              <i class="fa-regular fa-file-pdf"></i>
+            </div>
+            <h3 class="text-sm font-bold text-charcoal uppercase tracking-wider group-hover:text-teal-active transition-colors">Conference Brochure</h3>
+            <p class="text-xs text-slateGray leading-relaxed">View or download the official conference prospectus containing calls for papers, schedules, and publication paths.</p>
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active mt-4 flex items-center gap-1">Open PDF View <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1 transition-transform"></i></span>
+        </div>
+
+        <!-- Card 2: Registration & Fees -->
+        <div onclick="openBankModal()" class="premium-card rounded-xl p-6 cursor-pointer flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded bg-teal-light text-teal-active flex items-center justify-center text-lg font-bold">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <h3 class="text-sm font-bold text-charcoal uppercase tracking-wider group-hover:text-teal-active transition-colors">Registration & Fees</h3>
+            <p class="text-xs text-slateGray leading-relaxed">Review delegates fees structure, payment schedules, and access our direct online banking coordinates details.</p>
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active mt-4 flex items-center gap-1">View Pricing <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1 transition-transform"></i></span>
+        </div>
+
+        <!-- Card 3: Paper Submission -->
+        <a href="https://easychair.org/" target="_blank" rel="noopener" class="premium-card rounded-xl p-6 flex flex-col justify-between group">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded bg-blue-50 text-blue-600 flex items-center justify-center text-lg font-bold">
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <h3 class="text-sm font-bold text-charcoal uppercase tracking-wider group-hover:text-teal-active transition-colors">Paper Submission</h3>
+            <p class="text-xs text-slateGray leading-relaxed">Submit your original research papers directly using the online EasyChair conference submission system.</p>
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active mt-4 flex items-center gap-1">EasyChair submission <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Publication & Ethics Section -->
+  <section id="publication-ethics" class="py-16 bg-white border-b border-slate-100 scroll-reveal">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-10">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Integrity & Standards</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">About Publication and Ethics Statement</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+      
+      <!-- Content Panel -->
+      <div class="text-slateGray text-sm sm:text-base leading-relaxed space-y-6 text-justify">
+        <p>
+          The <strong>3rd International Conference on Algorithms in Advanced Artificial Intelligence (ICAAAI-2026)</strong> is committed to maintaining the highest standards of publication ethics and research integrity. To ensure the quality and validity of all published proceedings, the conference organizers expect all authors, reviewers, and editors to strictly adhere to the guidelines set forth by the <strong>Committee on Publication Ethics (COPE)</strong>.
+        </p>
+        <p>
+          <strong>Double-Blind Peer Review:</strong> Every submitted manuscript undergoes a rigorous double-blind peer review process conducted by at least two independent domain experts. Reviewers evaluate manuscripts based on originality, technical quality, research methodologies, and contribution to the field of artificial intelligence. To ensure impartiality, all identifying author information is removed from the manuscripts prior to review.
+        </p>
+        <p>
+          <strong>Plagiarism & AI-Generated Content Policies:</strong> Originality is a prerequisite for submission. The conference enforces a strict plagiarism detection protocol using industry-standard tools (such as Turnitin/iThenticate). The similarity index of any submission must remain strictly below <strong>10–12%</strong>. Furthermore, manuscripts containing excessive or uncredited machine-generated content are not considered for publication.
+        </p>
+        <p>
+          <strong>Authorship & Academic Misconduct:</strong> Only individuals who have made significant intellectual contributions to the research may be listed as authors. Any form of academic misconduct, including plagiarism, data fabrication, duplication, or redundant publication, will be handled with absolute seriousness. Violations will result in the immediate retraction of the paper and notification of the authors' home institutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakers / Keynote Guests Section (Official Speaker Directory layout, full color, neumorphic shadow lift) -->
+  <section id="speakers" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold font-bold">Global Experts</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Our Chief Guests</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Chief Guests Grid (4 Columns Desktop, 1 Column Mobile) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16">
+        <!-- Guest 1 -->
+        <div onclick="openSpeakerModal('hazlina')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-square relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/guest_g1.webp" alt="Dr. Hazlina Binti Hamdan headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Dr. Hazlina Binti Hamdan</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">Head, AI Research Group</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">Universiti Putra Malaysia, Malaysia</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Guest 2 -->
+        <div onclick="openSpeakerModal('panduranga')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-square relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/guest_g3.webp" alt="Professor M.V. Panduranga Rao headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Professor M.V. Panduranga Rao</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">Professor</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">IIT Hyderabad, Telangana, India</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Guest 3 -->
+        <div onclick="openSpeakerModal('saha')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-square relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/guest_g2.webp" alt="Dr. Sriparna Saha headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Dr. Sriparna Saha</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">Associate Professor</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">IIT Patna, Bihar, India</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Guest 4 -->
+        <div onclick="openSpeakerModal('chakravarthy')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-square relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/guest_chakravarthy.webp" alt="Dr. A. S. N. Chakravarthy headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Dr. A. S. N. Chakravarthy</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">Professor</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">JNTU Kakinada, Andhra Pradesh, India</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Header for Keynotes -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold font-bold">Keynotes & Technical Sessions</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Our Keynote Speakers</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Keynote Speakers Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Keynote 1 -->
+        <div onclick="openSpeakerModal('sinha')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-[4/3] relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/speaker_k3.webp" alt="Mr. Ranjan Sinha headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Mr. Ranjan Sinha</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">CTO watsonx, IBM Research AI</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium font-medium">IEEE Computer Society Bay Area VP</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Keynote 2 -->
+        <div onclick="openSpeakerModal('raorao')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-[4/3] relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/speaker_k1.webp" alt="Mr. Budaraju Raja Rao headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Mr. Budaraju Raja Rao</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5">Sr. Technical Staff</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">Oracle America Inc, CA, USA</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Keynote 3 -->
+        <div onclick="openSpeakerModal('prasetyo')" class="premium-card rounded-xl overflow-hidden flex flex-col h-full cursor-pointer group">
+          <div class="aspect-[4/3] relative overflow-hidden bg-slate-100">
+            <img src="assets/speakers/speaker_k2.webp" alt="Dr. Judhi Prasetyo FHEA MSc headshot photo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-base text-charcoal group-hover:text-teal-active transition-colors">Dr. Judhi Prasetyo FHEA MSc</h3>
+              <p class="text-xs text-teal-active font-semibold uppercase tracking-wider mb-2 mt-0.5 font-semibold">Senior Lecturer, Computer Eng & Informatics</p>
+              <p class="text-xs text-slateGray leading-relaxed font-medium">Middlesex University, Dubai</p>
+            </div>
+            <span class="mt-4 text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              Read Biography <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Committees Section (Space-Saving Inline tabs in a single row) -->
+  <section id="committees" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Committees</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Advisory & Organizing Boards</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Symmetrical Tab Nav Switcher Row (Single line, swipable overflow on mobile) -->
+      <div class="max-w-4xl mx-auto mb-10 relative">
+        <div id="comm-tabs-container" class="flex flex-row items-center justify-start lg:justify-between border-b border-slate-200 pb-3 relative overflow-x-auto whitespace-nowrap no-scrollbar gap-6">
+          
+          <button id="comm-tab-advisory" class="comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-teal-active transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Advisory Committee
+          </button>
+          <button id="comm-tab-technical" class="comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Technical Program Committee
+          </button>
+          <button id="comm-tab-editorial" class="comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Editorial Board Members
+          </button>
+          <button id="comm-tab-programme" class="comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Programme Committee Members
+          </button>
+          
+          <!-- Dynamic sliding indicator under active tab text -->
+          <div id="comm-tab-indicator" class="absolute bottom-0 h-[3px] bg-teal-active transition-all duration-300" style="left: 0px; width: 0px;"></div>
+        </div>
+      </div>
+
+      <!-- Plain Text Boards Display Panel Container (Pure white surface with soft separating shadows) -->
+      <div class="max-w-4xl mx-auto premium-card p-6 sm:p-10 rounded-xl min-h-[300px]">
+        
+        <!-- Board Content 1: Advisory Committee -->
+        <div id="comm-content-advisory" class="block space-y-6">
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">International Advisory Board</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Prof. Dato Dr. Shamala K. Subramaniam</strong> (Universiti Putra Malaysia, Malaysia)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Diego Oliva</strong> (Universidad de Guadalajara, Mexico)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Ahmed Elngar</strong> (Beni-Suef University, Egypt)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Antonino Galletta</strong> (University of Messina, Italy)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Judhi Prasetyo</strong> (Middlesex University, Dubai, UAE)</p>
+            </div>
+          </div>
+          <div class="pt-4">
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">National Advisory Board</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Dr. D.V.L. Somayajulu</strong> (Director, IIITDM-Kurnool)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Dukkipati Ambedkar</strong> (IISc, Bangalore)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. M.V. Pandu Ranga Rao</strong> (IIT, Hyderabad)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Manju Khari</strong> (JNU, New Delhi)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Board Content 2: Technical Program Committee -->
+        <div id="comm-content-technical" class="hidden space-y-6">
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">International Program Members</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Dr. Hazlina Binti Hamdan</strong> (UPM, Malaysia)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Ozen Ozer</strong> (Kirklareli University, Turkey)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Ben Othman Soufiane</strong> (University of Sousse, Tunisia)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Tien Anh Tran</strong> (Vietnam Maritime University, Vietnam)</p>
+            </div>
+          </div>
+          <div class="pt-4">
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">National Program Members</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Dr. Praneetha Sree</strong> (NIT Raipur)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. K. Himabindu</strong> (NIT Andhra Pradesh)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. Nagesh Bhattu Sristy</strong> (NIT Andhra Pradesh)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. P. S. V. S. Sai Prasad</strong> (University of Hyderabad)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Board Content 3: Editorial Board Members -->
+        <div id="comm-content-editorial" class="hidden space-y-4">
+          <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100 font-bold font-bold">Editorial Board Members</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+            <p><strong class="text-charcoal font-semibold">Prof. Dr. Xiao-Zhi Gao</strong> (University of Eastern Finland, Finland)</p>
+            <p><strong class="text-charcoal font-semibold">Dr. Hazlina Binti Hamdan</strong> (UPM, Malaysia)</p>
+            <p><strong class="text-charcoal font-semibold">Dr. Ozen Ozer</strong> (Kirklareli University, Turkey)</p>
+            <p><strong class="text-charcoal font-semibold">Dr. Tien Anh Tran</strong> (Vietnam Maritime University, Vietnam)</p>
+            <p><strong class="text-charcoal font-semibold">Dr. Ben Othman Soufiane</strong> (University of Sousse, Tunisia)</p>
+          </div>
+        </div>
+
+        <!-- Board Content 4: Programme Committee Members -->
+        <div id="comm-content-programme" class="hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slateGray">
+            <div>
+              <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-2 pb-1 border-b border-slate-100">Chief Patron</h4>
+              <p class="font-bold text-charcoal text-sm">Sri S. Prasada Raju</p>
+              <p class="text-xs text-slateGray">President, SRKR Engineering College Association</p>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-2 pb-1 border-b border-slate-100">Patrons</h4>
+              <div class="space-y-1 text-xs">
+                <p><strong>Sri P. Krishnam Raju</strong> (Honorary Chairman, SRKREC)</p>
+                <p><strong>Sri G. Rama Raju</strong> (Vice President, SRKREC Association)</p>
+                <p><strong>Sri S.V. Ranga Raju</strong> (Vice President, SRKREC Association)</p>
+                <p><strong>Sri S.R.K. Nishant Varma</strong> (Secretary cum Correspondent, SRKREC)</p>
+              </div>
+            </div>
+            <div class="md:col-span-2 pt-2">
+              <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-2 pb-1 border-b border-slate-100">Administration Chair & Convener</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-bold text-charcoal">Dr. BHVS Ramakrishnamraju</p>
+                  <p class="text-xs">Principal, SRKR Engineering College</p>
+                </div>
+                <div>
+                  <p class="font-bold text-charcoal">Dr. R.N.V. Jagan Mohan</p>
+                  <p class="text-xs">Convener & Head of CSE Department, SRKREC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Organizing Committees Section (Space-Saving Inline tabs in a single row) -->
+  <section id="internal-committees" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Internal Organizing Committees</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Organizing Committees</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Symmetrical Tab Nav Switcher Row (Single line, swipable overflow on mobile) -->
+      <div class="max-w-4xl mx-auto mb-10 relative">
+        <div id="internal-comm-tabs-container" class="flex flex-row items-center justify-start lg:justify-between border-b border-slate-200 pb-3 relative overflow-x-auto whitespace-nowrap no-scrollbar gap-6">
+          
+          <button id="internal-comm-tab-logistics" class="internal-comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-teal-active transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Logistics Committee
+          </button>
+          <button id="internal-comm-tab-registration" class="internal-comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Registration Committee
+          </button>
+          <button id="internal-comm-tab-technical" class="internal-comm-tab-btn text-xs sm:text-sm font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold shrink-0">
+            Technical Session Organising Committee
+          </button>
+          
+          <!-- Dynamic sliding indicator under active tab text -->
+          <div id="internal-comm-tab-indicator" class="absolute bottom-0 h-[3px] bg-teal-active transition-all duration-300" style="left: 0px; width: 0px;"></div>
+        </div>
+      </div>
+
+      <!-- Plain Text Boards Display Panel Container (Pure white surface with soft separating shadows) -->
+      <div class="max-w-4xl mx-auto premium-card p-6 sm:p-10 rounded-xl min-h-[300px]">
+        
+        <!-- Board Content 1: Logistics Committee -->
+        <div id="internal-comm-content-logistics" class="block space-y-6">
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Logistics Committee</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Dr. J. Rajani Kanth</strong> (Coordinator)</p>
+              <p><strong class="text-charcoal font-semibold">Sri Ch. Vinod Varma</strong></p>
+              <p><strong class="text-charcoal font-semibold">Sri K. Gopala Varma</strong></p>
+              <p><strong class="text-charcoal font-semibold">Sri S. Suresh Kumar</strong></p>
+              <p><strong class="text-charcoal font-semibold">Sri P. Durga Prasad</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Board Content 2: Registration Committee -->
+        <div id="internal-comm-content-registration" class="hidden space-y-6">
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Registration Committee</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Smt. K. Sravani</strong> (Coordinator)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. D.N.S.B. Kavitha</strong></p>
+              <p><strong class="text-charcoal font-semibold">Smt. P. Jahnavi</strong></p>
+              <p><strong class="text-charcoal font-semibold">Sri K. P. Sai Ramakrishna</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Board Content 3: Technical Session Organising Committee -->
+        <div id="internal-comm-content-technical" class="hidden space-y-6">
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-3 pb-1 border-b border-slate-100">Technical Session Organising Committee</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slateGray">
+              <p><strong class="text-charcoal font-semibold">Dr. Ch. Ravi Swaroop</strong> (Coordinator)</p>
+              <p><strong class="text-charcoal font-semibold">Dr. J. Rajani Kanth</strong></p>
+              <p><strong class="text-charcoal font-semibold">Dr. D.N.S.B. Kavitha</strong></p>
+              <p><strong class="text-charcoal font-semibold">Smt. K. Sravani</strong></p>
+              <p><strong class="text-charcoal font-semibold">Sri Ch. Vinod Varma</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestone Timeline Progress Line Section (Floating lift timeline cards) -->
+  <section id="timeline" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Key Milestones</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Important Dates</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Timeline Container -->
+      <div id="timeline-container" class="max-w-4xl mx-auto relative pl-8 sm:pl-0">
+        <!-- Static background track line -->
+        <div class="absolute left-[34px] sm:left-1/2 top-0 bottom-0 w-[3px] bg-slate-200 transform -translate-x-1/2 z-0"></div>
+        
+        <!-- Live Tracking Filler Progress Line -->
+        <div id="timeline-fill-line" class="absolute left-[34px] sm:left-1/2 top-0 w-[3px] bg-teal-active transform -translate-x-1/2 z-10 transition-all duration-150 ease-out" style="height: 0%;"></div>
+        
+        <!-- Dates steps -->
+        <div class="space-y-16">
+          
+          <!-- Node 1 -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center timeline-node">
+            <div class="absolute left-1.5 sm:left-1/2 w-5 h-5 rounded-full bg-white border-[4px] border-slate-200 transform -translate-x-1/2 z-20 transition-all duration-300"></div>
+            <div class="w-full sm:w-1/2 sm:pr-12 pl-12 sm:pl-0 sm:text-right">
+              <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
+                <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800 mb-2 uppercase tracking-wide">Deadline</span>
+                <h3 class="font-bold text-charcoal text-base">Full Paper Submission</h3>
+                <p class="text-xs text-slateGray mt-1">Submit your original research manuscript draft via EasyChair.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 sm:pl-12 pl-12 mt-2 sm:mt-0">
+              <span class="text-sm font-bold text-teal-active bg-teal-light px-3 py-1.5 rounded border border-teal-active/10 uppercase tracking-wider">September 30, 2026</span>
+            </div>
+          </div>
+
+          <!-- Node 2 -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center timeline-node">
+            <div class="absolute left-1.5 sm:left-1/2 w-5 h-5 rounded-full bg-white border-[4px] border-slate-200 transform -translate-x-1/2 z-20 transition-all duration-300"></div>
+            <div class="w-full sm:w-1/2 sm:pr-12 pl-12 sm:pl-0 sm:text-right order-2 sm:order-1 mt-2 sm:mt-0">
+              <span class="text-sm font-bold text-teal-active bg-teal-light px-3 py-1.5 rounded border border-teal-active/10 uppercase tracking-wider">October 22, 2026</span>
+            </div>
+            <div class="w-full sm:w-1/2 sm:pl-12 pl-12 order-1 sm:order-2">
+              <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
+                <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-teal-light text-teal-active mb-2 uppercase tracking-wide">Review</span>
+                <h3 class="font-bold text-charcoal text-base">Notification of Acceptance</h3>
+                <p class="text-xs text-slateGray mt-1">Authors receive peer-reviewer comments and formal acceptance results.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 3 -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center timeline-node">
+            <div class="absolute left-1.5 sm:left-1/2 w-5 h-5 rounded-full bg-white border-[4px] border-slate-200 transform -translate-x-1/2 z-20 transition-all duration-300"></div>
+            <div class="w-full sm:w-1/2 sm:pr-12 pl-12 sm:pl-0 sm:text-right">
+              <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
+                <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-teal-light text-teal-active mb-2 uppercase tracking-wide">Camera Ready</span>
+                <h3 class="font-bold text-charcoal text-base">Camera Ready Submission</h3>
+                <p class="text-xs text-slateGray mt-1">Final upload of revised manuscripts incorporating reviewers comments.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 sm:pl-12 pl-12 mt-2 sm:mt-0">
+              <span class="text-sm font-bold text-teal-active bg-teal-light px-3 py-1.5 rounded border border-teal-active/10 uppercase tracking-wider">October 30, 2026</span>
+            </div>
+          </div>
+
+          <!-- Node 4 -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center timeline-node">
+            <div class="absolute left-1.5 sm:left-1/2 w-5 h-5 rounded-full bg-white border-[4px] border-slate-200 transform -translate-x-1/2 z-20 transition-all duration-300"></div>
+            <div class="w-full sm:w-1/2 sm:pr-12 pl-12 sm:pl-0 sm:text-right order-2 sm:order-1 mt-2 sm:mt-0">
+              <span class="text-sm font-bold text-teal-active bg-teal-light px-3 py-1.5 rounded border border-teal-active/10 uppercase tracking-wider">November 5, 2026</span>
+            </div>
+            <div class="w-full sm:w-1/2 sm:pl-12 pl-12 order-1 sm:order-2">
+              <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
+                <span class="inline-flex px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-active/10 text-teal-active mb-2 uppercase tracking-wide">Registration</span>
+                <h3 class="font-bold text-charcoal text-base">Early Bird Registration</h3>
+                <p class="text-xs text-slateGray mt-1">Final date to submit registration fee for camera-ready publication.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 5 -->
+          <div class="relative flex flex-col sm:flex-row items-start sm:items-center timeline-node">
+            <div class="absolute left-1.5 sm:left-1/2 w-5 h-5 rounded-full bg-white border-[4px] border-slate-200 transform -translate-x-1/2 z-20 transition-all duration-300"></div>
+            <div class="w-full sm:w-1/2 sm:pr-12 pl-12 sm:pl-0 sm:text-right">
+              <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
+                <span class="inline-flex px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-active text-white mb-2 uppercase tracking-wide">Sessions</span>
+                <h3 class="font-bold text-charcoal text-base">Conference Dates</h3>
+                <p class="text-xs text-slateGray mt-1">Keynote presentations, paper sessions, and delegate network events.</p>
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 sm:pl-12 pl-12 mt-2 sm:mt-0">
+              <span class="text-sm font-bold text-white bg-teal-active px-3 py-1.5 rounded border border-teal-active uppercase tracking-wider">December 11 - 13, 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Registration Module (Pricing Highlight cards, soft off-white background) -->
+  <section id="registration" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Pricing Matrix</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Registration Fees</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Pricing cards (Prominent price highlight, pure white cards with soft separators) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+        
+        <!-- Card 1: National Academic / R&D -->
+        <div class="premium-card rounded-xl p-8 flex flex-col justify-between relative">
+          <div class="space-y-4">
+            <span class="text-[10px] font-bold text-slateGray uppercase tracking-widest block">National Delegates</span>
+            <!-- Price highlighted prominently in Crimson red -->
+            <div class="text-4xl font-extrabold text-accentRed font-sans">
+              INR 9,000/-
+            </div>
+            <div class="w-10 h-0.5 bg-slate-100"></div>
+            <ul class="text-xs text-slateGray space-y-2.5">
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Taylor & Francis Index-Grade Proceedings</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Research Session Presentations Slots</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Delegate Kit & Conference Banquet Entry</li>
+            </ul>
+          </div>
+          <button onclick="openBankModal()" class="w-full mt-8 bg-teal-active hover:bg-teal-active/90 text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-colors shadow-sm text-center">
+            Register & Pay
+          </button>
+        </div>
+
+        <!-- Card 2: International Delegates -->
+        <div class="premium-card rounded-xl p-8 flex flex-col justify-between relative">
+          <div class="space-y-4">
+            <span class="text-[10px] font-bold text-slateGray uppercase tracking-widest block">International Delegates</span>
+            <!-- Price highlighted prominently in Crimson red -->
+            <div class="text-4xl font-extrabold text-accentRed font-sans">
+              110 USD
+            </div>
+            <div class="w-10 h-0.5 bg-slate-100"></div>
+            <ul class="text-xs text-slateGray space-y-2.5">
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Taylor & Francis Index-Grade Proceedings</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Scopus Indexed Publication Path</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> International Networking & Gala banquet</li>
+            </ul>
+          </div>
+          <button onclick="openBankModal()" class="w-full mt-8 bg-teal-active hover:bg-teal-active/90 text-white font-bold text-xs uppercase tracking-wider py-3 rounded transition-colors shadow-sm text-center">
+            Register & Pay
+          </button>
+        </div>
+
+        <!-- Card 3: Additional Page Charges -->
+        <div class="premium-card rounded-xl p-8 flex flex-col justify-between relative">
+          <div class="space-y-4">
+            <span class="text-[10px] font-bold text-slateGray uppercase tracking-widest block">Extra Page Fees</span>
+            <!-- Price highlighted prominently in Crimson red -->
+            <div class="text-4xl font-extrabold text-accentRed font-sans">
+              INR 1,000/pg
+            </div>
+            <div class="w-10 h-0.5 bg-slate-100"></div>
+            <ul class="text-xs text-slateGray space-y-2.5">
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Applies for papers exceeding 6 pages</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> Maximum 2 additional pages permitted</li>
+              <li><i class="fa-solid fa-check text-teal-active mr-1"></i> International charges: <strong>20 USD/pg</strong></li>
+            </ul>
+          </div>
+          <button onclick="openBankModal()" class="w-full mt-8 bg-slate-100 hover:bg-slate-200 text-charcoal border border-slate-200 font-bold text-xs uppercase tracking-wider py-3 rounded transition-colors text-center">
+            Review Policy
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Action summary footer -->
+      <div class="max-w-4xl mx-auto mt-10">
+        <div class="premium-card rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-1">
+            <h4 class="text-sm font-bold text-charcoal uppercase tracking-wider">Bank Wire Coordinates & Transfer Instructions</h4>
+            <p class="text-xs text-slateGray">View direct routing values, account references, and notification details.</p>
+          </div>
+          <button onclick="openBankModal()" class="bg-teal-active hover:bg-teal-active/90 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded shadow-sm transition-colors shrink-0">
+            Show Banking Details
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Showcase Gallery & Press Releases Section (Showcase Gallery Strip) -->
+  <section id="gallery" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Media Streams</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Showcase Gallery</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Track A: ICAAAI Gallery Tab Nav Switcher -->
+      <div class="max-w-md mx-auto mb-10 relative">
+        <div id="gallery-tabs-container" class="flex flex-row items-center justify-between border-b border-slate-200 pb-3 relative">
+          <button id="gallery-tab-inaugural" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-teal-active transition-colors focus:outline-none z-10 font-semibold">
+            Inaugural & Keynotes
+          </button>
+          <button id="gallery-tab-technical" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold">
+            Technical Sessions
+          </button>
+          <button id="gallery-tab-valedictory" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold">
+            Valedictory & Gala
+          </button>
+          
+          <!-- Dynamic sliding indicator under active tab text -->
+          <div id="gallery-tab-indicator" class="absolute bottom-0 h-[3px] bg-teal-active transition-all duration-300" style="left: 0px; width: 0px;"></div>
+        </div>
+      </div>
+
+      <!-- Gallery Panel Container -->
+      <div class="max-w-6xl mx-auto mb-16">
+        
+        <!-- Tab 1: Inaugural & Keynotes -->
+        <div id="gallery-content-inaugural" class="block">
+          <div id="gallery-track-inaugural" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+            <!-- P1 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_1.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_1.webp" alt="Conference Opening Ceremony" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P1 • Inaugural</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Conference Opening Ceremony</p>
+            </div>
+            <!-- P2 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_2.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_2.webp" alt="Crest Lighting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P2 • Inaugural</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Lamp Lighting Auspicious Beginning</p>
+            </div>
+            <!-- P3 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_3.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_3.webp" alt="Academic Procession" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P3 • Procession</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Dignitaries Academic Procession</p>
+            </div>
+            <!-- P4 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_4.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_4.webp" alt="Inaugural Address" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P4 • Keynote Hall</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Inaugural Address by Chief Guest</p>
+            </div>
+            <!-- P5 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_5.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_5.webp" alt="Patron Speech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P5 • Patrons</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Patron Speech & Encouragement</p>
+            </div>
+            <!-- P6 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_6.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_6.webp" alt="Guest of Honor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P6 • Guest of Honor</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Felicitation of International Guests</p>
+            </div>
+            <!-- P8 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_8.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_8.webp" alt="Keynote Lecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P7 • Keynote Lecture</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Invited Technical Keynote Session</p>
+            </div>
+            <!-- P9 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_9.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_9.webp" alt="Auditorium View" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P8 • Audience</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Main Auditorium Delegate Hall</p>
+            </div>
+            <!-- P10 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_10.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_10.webp" alt="Principal Address" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P9 • Administration</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Principal Address to Researchers</p>
+            </div>
+            <!-- P11 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_11.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_11.webp" alt="Steering Committee" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P10 • Council Hall</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Steering Committee Advisory Meeting</p>
+            </div>
+            <!-- P12 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_12.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_12.webp" alt="Advisory Board" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P11 • Secretariat</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">National Advisory Forum Discussion</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Technical Sessions -->
+        <div id="gallery-content-technical" class="hidden">
+          <div id="gallery-track-technical" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+            <!-- P13 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_13.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_13.webp" alt="Presenter" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P12 • Presenter</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Technical Research Presentation</p>
+            </div>
+            <!-- P14 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_14.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_14.webp" alt="Q&A Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P13 • Q&A Session</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Interactive Research Query Q&A</p>
+            </div>
+            <!-- P15 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_15.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_15.webp" alt="Session Chair" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P14 • Session Chair</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Expert Evaluation Session Chair</p>
+            </div>
+            <!-- P16 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_16.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_16.webp" alt="Poster Display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P15 • Exhibition</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Poster Exhibition and Exchange</p>
+            </div>
+            <!-- P17 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_17.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_17.webp" alt="Machine Learning Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P16 • Seminar Hall</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Parallel Track: Machine Learning</p>
+            </div>
+            <!-- P18 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_18.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_18.webp" alt="Parallel Track" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P17 • Seminar Hall B</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Parallel Session: Deep Neural Nets</p>
+            </div>
+            <!-- P19 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_19.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_19.webp" alt="Demo Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P18 • Demos</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Intelligent Systems Prototypes Demo</p>
+            </div>
+            <!-- P21 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_21.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_21.webp" alt="Delegate Networking" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P19 • Networking</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Academic Delegates Interaction</p>
+            </div>
+            <!-- P23 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_23.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_23.webp" alt="Exhibition Booths" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P20 • Exhibition</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Corporate Sponsor Booths Exhibition</p>
+            </div>
+            <!-- P24 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_24.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_24.webp" alt="AI Hub" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P21 • Innovation</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">AI Research Innovation Center</p>
+            </div>
+            <!-- P25 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_25.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_25.webp" alt="Poster presentation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P22 • Technical</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Delegate Poster Session Presentation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Valedictory & Gala -->
+        <div id="gallery-content-valedictory" class="hidden">
+          <div id="gallery-track-valedictory" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+            <!-- P28 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_28.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_28.webp" alt="Valedictory Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P23 • Valedictory</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Valedictory Ceremony Concluding Session</p>
+            </div>
+            <!-- P32 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_32.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_32.webp" alt="Best Paper Award" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P24 • Awards</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Best Research Paper Award Felicitation</p>
+            </div>
+            <!-- P33 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_33.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_33.webp" alt="Felicitation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P25 • Felicitation</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Organizing Committee Felicitation</p>
+            </div>
+            <!-- P36 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_36.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_36.webp" alt="Banquet Dinner" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P26 • Banquet</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Conference Gala Dinner Banquet</p>
+            </div>
+            <!-- P37 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_37.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_37.webp" alt="Cultural Program" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P27 • Culturals</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Classical Music & Cultural Program</p>
+            </div>
+            <!-- P40 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_40.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_40.webp" alt="Certificates" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P28 • Valedictory</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Certificate Distribution to Participants</p>
+            </div>
+            <!-- P46 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_46.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_46.webp" alt="Group Photo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P29 • Group Photo</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Delegates Final Photo Session</p>
+            </div>
+            <!-- P47 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_47.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_47.webp" alt="Closing Address" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P30 • Concluding</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Closing Remarks by CSE Convener</p>
+            </div>
+            <!-- P48 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_48.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_48.webp" alt="Organizing Team" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P31 • Core Team</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Organizing Faculty & Coordinator Team</p>
+            </div>
+            <!-- P49 -->
+            <div onclick="openLightbox('assets/gallery/gallery_2025_49.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
+                <img src="assets/gallery/gallery_2025_49.webp" alt="Farewell Session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+              </div>
+              <p class="text-[9px] font-bold text-teal-active uppercase tracking-widest">P32 • Farewell</p>
+              <p class="text-xs font-bold text-charcoal mt-0.5 line-clamp-1">Farewell & See You next year</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Track B: Press Releases (ICAAAI 2025 PRESS) -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xs font-bold text-charcoal uppercase tracking-widest flex items-center gap-1.5 font-semibold">
+            <i class="fa-regular fa-newspaper text-teal-active"></i> ICAAAI 2025 Press Reports
+          </h3>
+          <!-- Desktop navigation chevrons -->
+          <div class="hidden lg:flex gap-2">
+            <button onclick="scrollTrack('track-b', -340)" class="w-8 h-8 rounded border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slateGray hover:text-charcoal transition-colors">
+              <i class="fa-solid fa-chevron-left text-[10px]"></i>
+            </button>
+            <button onclick="scrollTrack('track-b', 340)" class="w-8 h-8 rounded border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slateGray hover:text-charcoal transition-colors">
+              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Swipe container Track B (Pure Tailwind Carousel/Grid Hybrid) -->
+        <div id="track-b" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+          <!-- M1 -->
+          <div onclick="openLightbox('assets/press/press_2025_1.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+              <img src="assets/press/press_2025_1.webp" alt="Eenadu Press Report" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <p class="text-[10px] font-bold text-teal-active uppercase tracking-widest font-semibold">Eenadu Coverage</p>
+            <h4 class="font-bold text-charcoal text-sm mt-1 mb-2 line-clamp-1">Conference Inauguration Report</h4>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              View Report Clip <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+
+          <!-- M2 -->
+          <div onclick="openLightbox('assets/press/press_2025_2.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+              <img src="assets/press/press_2025_2.webp" alt="Sakshi Press Report" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <p class="text-[10px] font-bold text-teal-active uppercase tracking-widest font-semibold">Sakshi Coverage</p>
+            <h4 class="font-bold text-charcoal text-sm mt-1 mb-2 line-clamp-1">AI & Intelligent Systems Summit</h4>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              View Report Clip <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+
+          <!-- M3 -->
+          <div onclick="openLightbox('assets/press/press_2025_3.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+              <img src="assets/press/press_2025_3.webp" alt="The Hindu Press Report" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <p class="text-[10px] font-bold text-teal-active uppercase tracking-widest font-semibold">The Hindu Coverage</p>
+            <h4 class="font-bold text-charcoal text-sm mt-1 mb-2 line-clamp-1">Global AI Researchers Gather in Bhimavaram</h4>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              View Report Clip <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+
+          <!-- M4 -->
+          <div onclick="openLightbox('assets/press/press_2025_4.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-slate-100 border border-slate-100">
+              <img src="assets/press/press_2025_4.webp" alt="Deccan Chronicle Press Report" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <p class="text-[10px] font-bold text-teal-active uppercase tracking-widest font-semibold">Deccan Chronicle</p>
+            <h4 class="font-bold text-charcoal text-sm mt-1 mb-2 line-clamp-1">Innovative Algorithms Highlighted at JNTUK/SRKR</h4>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active flex items-center gap-1">
+              View Report Clip <i class="fa-solid fa-chevron-right text-[8px]"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section id="sponsors" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Sponsors</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Our Sponsors & Partners</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <!-- Sponsors Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto items-center justify-items-center">
+        <!-- Sponsor 1 -->
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+          <img src="assets/sponsors/sponsor_new.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+        </div>
+        <!-- Sponsor 2 -->
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+          <img src="assets/sponsors/sponsor_dept.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+        </div>
+        <!-- Sponsor 3 -->
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+          <img src="assets/sponsors/sponsor_maharshi.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+        </div>
+        <!-- Sponsor 4 -->
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+          <img src="assets/sponsors/venue_logo.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Venue Section -->
+  <section id="venue" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-teal-active text-xs font-bold uppercase tracking-widest font-semibold">Location Info</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-charcoal mt-1">Conference Venue</h2>
+        <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+        <!-- Info Column -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl border border-slate-200 bg-white p-2 flex items-center justify-center overflow-hidden shadow-sm shrink-0">
+              <img src="assets/sponsors/venue_logo.webp" alt="SRKR Logo" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-charcoal">SRKR Engineering College</h3>
+              <p class="text-xs text-teal-active font-semibold">Autonomous Institution</p>
+            </div>
+          </div>
+          <p class="text-xs text-slateGray leading-relaxed font-medium">
+            The conference will be held at the central auditorium complex of SRKR Engineering College (Autonomous), located in the serene surroundings of Bhimavaram, West Godavari District, Andhra Pradesh, India.
+          </p>
+          
+          <div class="space-y-4 border-t border-slate-100 pt-6 text-xs text-slateGray">
+            <div class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded bg-teal-light text-teal-active flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-charcoal">Full Address</h4>
+                <p class="mt-0.5 font-medium">S.R.K.R. Engineering College, Chinna Amiram, Bhimavaram, West Godavari District, Andhra Pradesh - 534204, India.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded bg-teal-light text-teal-active flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-plane"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-charcoal">Airports & Travel</h4>
+                <p class="mt-0.5 font-medium">Nearest airports are Rajahmundry (RJA) (~80 km) or Vijayawada (VGA) (~120 km). Direct trains from Hyderabad, Visakhapatnam, and Chennai stop at Bhimavaram Junction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map Iframe -->
+        <div class="w-full h-80 rounded overflow-hidden border border-slate-200 shadow-sm img-fallback">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3830.407421868469!2d81.50503037500595!3d16.516568284241688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a378d30e38605c7%3A0x6b9d107a64386927!2sSRKR%20Engineering%20College!5e0!3m2!1sen!2sin!4v1716808000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact" class="bg-neutralDark text-white pt-16 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-white/5 pb-12">
+        <!-- Logo & Bio -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-white/10 rounded flex items-center justify-center p-1 border border-white/20 overflow-hidden">
+              <img src="assets/sponsors/badge_4073bf5cd0.webp" alt="ICAAAI Crest Logo visual" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+            </div>
+            <span class="font-extrabold text-sm tracking-wider">ICAAAI 2026</span>
+          </div>
+          <p class="text-xs text-white/50 leading-relaxed font-medium">
+            3rd International Conference on Algorithms in Advanced Artificial Intelligence. Organized by Department of Computer Science & Engineering, SRKR Engineering College (Autonomous).
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="font-bold text-[10px] tracking-wider uppercase text-teal-active mb-4 font-semibold">Navigations</h4>
+          <ul class="text-xs text-white/60 space-y-2.5">
+            <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#speakers" class="hover:text-white transition-colors">Speakers</a></li>
+            <li><a href="#committees" class="hover:text-white transition-colors">Committees</a></li>
+            <li><a href="#timeline" class="hover:text-white transition-colors">Important Dates</a></li>
+            <li><a href="#registration" class="hover:text-white transition-colors">Registration</a></li>
+          </ul>
+        </div>
+
+        <!-- Submission Details -->
+        <div>
+          <h4 class="font-bold text-[10px] tracking-wider uppercase text-teal-active mb-4 font-semibold">Manuscripts</h4>
+          <ul class="text-xs text-white/60 space-y-2.5">
+            <li><a href="https://easychair.org/" target="_blank" rel="noopener" class="hover:text-white transition-colors">EasyChair submission</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Routledge paper templates</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Peer-review guidelines</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Ethical publication norms</a></li>
+          </ul>
+        </div>
+
+        <!-- Secretariat Contacts -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-[10px] tracking-wider uppercase text-teal-active mb-4 font-semibold">Secretariat</h4>
+          <div class="text-xs text-white/60 space-y-2.5">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-user-tie text-teal-active"></i>
+              <span>Convener: Dr. R.N.V. Jagan Mohan</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-regular fa-envelope text-teal-active"></i>
+              <a href="mailto:icaaai@srkrec.edu.in" class="hover:text-white transition-colors">icaaai@srkrec.edu.in</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-teal-active"></i>
+              <a href="tel:+917981349543" class="hover:text-white transition-colors">+91-7981349543</a>
+            </div>
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-teal-active shrink-0 mt-0.5"></i>
+              <span>Department of CSE, SRKR Engineering College, Bhimavaram, AP - 534204, India.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between border-t border-white/5 pt-8 text-[11px] text-white/40">
+        <p>© 2026 SRKR Engineering College. All Rights Reserved.</p>
+        <p class="mt-2 sm:mt-0">Designed for ICAAAI 2026 Platform</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== OVERLAY PORTAL COMPONENTS ==================== -->
+
+  <!-- Speaker Biography Drawer Overlay (Detailed Profile popup modal) -->
+  <div id="speaker-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 overflow-hidden flex items-center justify-center p-4">
+      <!-- Background overlay -->
+      <div id="speaker-overlay" class="absolute inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade" onclick="closeSpeakerModal()"></div>
+
+      <!-- Center Modal Box (Academic directory style biography) -->
+      <div class="relative bg-white w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-slate-200 z-10 flex flex-col max-h-[85vh] modal-panel-scale">
+        <!-- Drawer Header -->
+        <div class="bg-neutralDark text-white px-6 py-4 flex items-center justify-between">
+          <h2 class="text-xs font-bold text-white uppercase tracking-wider" id="slide-over-title">Speaker Profile</h2>
+          <button onclick="closeSpeakerModal()" type="button" class="rounded text-white/70 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Drawer Body -->
+        <div class="relative flex-1 p-6 space-y-6 overflow-y-auto">
+          <div class="flex flex-col items-center text-center pb-6 border-b border-slate-100">
+            <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-teal-active bg-slate-100 shadow shadow-teal-active/10 mb-4">
+              <img id="modal-speaker-img" src="" alt="Speaker Profile picture" class="w-full h-full object-cover object-top" decoding="async">
+            </div>
+            <h3 id="modal-speaker-name" class="text-lg font-bold text-charcoal"></h3>
+            <p id="modal-speaker-title" class="text-xs text-teal-active font-bold uppercase tracking-wider mt-1"></p>
+            <p id="modal-speaker-org" class="text-xs text-slateGray mt-0.5"></p>
+            <p id="modal-speaker-country" class="text-xs text-slateGray font-medium"></p>
+          </div>
+
+          <div>
+            <h4 class="text-[10px] font-bold text-slateGray uppercase tracking-widest mb-3">Academic Biography</h4>
+            <p id="modal-speaker-bio" class="text-xs text-slateGray leading-relaxed text-justify whitespace-pre-line"></p>
+          </div>
+        </div>
+        
+        <!-- Drawer Footer -->
+        <div class="border-t border-slate-100 px-6 py-4 bg-slate-50 flex justify-end">
+          <button onclick="closeSpeakerModal()" type="button" class="bg-neutralDark hover:bg-neutralDark/90 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">Close Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Bank Details Modal (Drop-in animated popup) -->
+  <div id="bank-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+      
+      <!-- Background overlay -->
+      <div id="bank-overlay" class="fixed inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade" aria-hidden="true"></div>
+
+      <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">&#8203;</span>
+
+      <!-- Modal panel -->
+      <div id="bank-modal-panel" class="relative inline-block transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-2xl sm:my-8 sm:w-full sm:max-w-xl sm:align-middle border border-slate-200 modal-panel-scale">
+        <!-- Header -->
+        <div class="bg-neutralDark text-white px-6 py-4 flex items-center justify-between">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider" id="modal-title">Registration Details</h3>
+          <button onclick="closeBankModal()" type="button" class="text-white/70 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 space-y-6">
+          
+          <!-- Pricing Table -->
+          <div>
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider mb-2 font-semibold">Category Pricing</h4>
+            <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 shadow-sm">
+              <table class="min-w-full divide-y divide-slate-200">
+                <thead class="bg-slate-50">
+                  <tr>
+                    <th scope="col" class="px-4 py-2.5 text-left text-xs font-bold text-slateGray uppercase tracking-wider">Category</th>
+                    <th scope="col" class="px-4 py-2.5 text-center text-xs font-bold text-slateGray uppercase tracking-wider">National</th>
+                    <th scope="col" class="px-4 py-2.5 text-center text-xs font-bold text-slateGray uppercase tracking-wider">International</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-xs text-charcoal">
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-4 py-3 font-semibold">National Participants <span class="text-[10px] font-normal text-slateGray block">(Academia/R&D/Industry)</span></td>
+                    <td class="px-4 py-3 text-center font-bold text-accentRed">INR 9,000/-</td>
+                    <td class="px-4 py-3 text-center text-slate-300">-</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="px-4 py-3 font-semibold">International Participants <span class="text-[10px] font-normal text-slateGray block">(All delegates)</span></td>
+                    <td class="px-4 py-3 text-center text-slate-300">-</td>
+                    <td class="px-4 py-3 text-center font-bold text-accentRed">110 USD</td>
+                  </tr>
+                  <tr class="bg-teal-light/20">
+                    <td class="px-4 py-3 font-semibold text-teal-active">Additional Page Fee <span class="text-[10px] font-normal text-slateGray block">(per page after 6 pages)</span></td>
+                    <td class="px-4 py-3 text-center font-bold text-accentRed">INR 1,000/pg</td>
+                    <td class="px-4 py-3 text-center font-bold text-accentRed">20 USD/pg</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Bank Details Card -->
+          <div class="border border-gray-200 rounded-xl bg-neutralLight p-4 space-y-3">
+            <h4 class="text-xs font-bold text-teal-active uppercase tracking-wider font-semibold">Banking Payment Information</h4>
+            <div class="divide-y divide-slate-200/60 text-xs text-slateGray">
+              <div class="py-2.5 flex justify-between gap-4">
+                <span class="font-bold text-charcoal">Account Name:</span>
+                <span class="font-semibold text-charcoal font-mono">ICAAAI-2026 SRKREC</span>
+              </div>
+              <div class="py-2.5 flex justify-between gap-4">
+                <span class="font-bold text-charcoal">Account Number:</span>
+                <span class="font-semibold text-charcoal font-mono">43489958911</span>
+              </div>
+              <div class="py-2.5 flex justify-between gap-4">
+                <span class="font-bold text-charcoal">Bank Name:</span>
+                <span class="font-semibold text-charcoal">State Bank of India</span>
+              </div>
+              <div class="py-2.5 flex justify-between gap-4">
+                <span class="font-bold text-charcoal">IFSC Code:</span>
+                <span class="font-semibold text-charcoal font-mono">SBIN0020530</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[10px] text-slateGray leading-relaxed">
+            <p class="font-bold text-charcoal"><i class="fa-solid fa-info-circle text-teal-active"></i> Next Steps:</p>
+            <p>Email the bank transaction receipt slip, alongside your Paper ID, Author Name, and Institution to the convener at <a href="mailto:icaaai@srkrec.edu.in" class="text-teal-active font-bold hover:underline">icaaai@srkrec.edu.in</a> to complete registration.</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-slate-50 px-6 py-4 flex items-center justify-between border-t border-slate-100">
+          <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-teal-active hover:bg-teal-active/90 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded transition-colors inline-flex items-center gap-1.5 shadow-sm font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Register Here
+          </a>
+          <button onclick="closeBankModal()" type="button" class="bg-neutralDark hover:bg-neutralDark/90 text-white text-xs font-bold uppercase tracking-wider px-4 py-3 rounded transition-colors">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conference Brochure PDF Overlay Modal -->
+  <div id="brochure-modal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-neutralDark bg-opacity-70 modal-backdrop-fade flex items-center justify-center p-4">
+      <!-- Background click dismiss overlay -->
+      <div id="brochure-overlay" class="absolute inset-0" onclick="closeBrochureModal()"></div>
+      
+      <!-- Modal Layout Panel -->
+      <div class="relative bg-white w-full max-w-5xl h-[85vh] rounded-2xl overflow-hidden flex flex-col z-10 shadow-2xl border border-slate-200 modal-panel-scale">
+        <!-- Header -->
+        <div class="bg-neutralDark text-white px-6 py-4 flex items-center justify-between">
+          <h3 class="text-sm font-bold uppercase tracking-wider font-semibold"><i class="fa-regular fa-file-pdf mr-2"></i> ICAAAI 2026 Conference Brochure</h3>
+          <button onclick="closeBrochureModal()" type="button" class="text-slate-400 hover:text-white focus:outline-none bg-slate-900/40 p-2 rounded-full">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <!-- Iframe container with scrolling allowed -->
+        <div class="flex-1 w-full h-full bg-slate-100 overflow-y-auto">
+          <iframe 
+            src="Broucher.pdf" 
+            class="w-full h-full border-none" 
+            style="min-height: 100%;">
+          </iframe>
+        </div>
+        <!-- Footer -->
+        <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center text-xs">
+          <p class="text-slateGray">Trouble viewing? <a href="Broucher.pdf" download class="text-teal-active font-bold hover:underline">Download directly</a></p>
+          <button onclick="closeBrochureModal()" type="button" class="bg-neutralDark hover:bg-neutralDark/90 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded transition-colors">Close View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
+    <div id="lightbox-overlay" class="absolute inset-0 bg-neutralDark bg-opacity-95 modal-backdrop-fade flex items-center justify-center p-4">
+      <button onclick="closeLightbox()" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none bg-slate-900/40 p-2.5 rounded-full z-20">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="max-w-5xl max-h-[85vh] overflow-hidden modal-panel-scale z-10">
+        <img id="lightbox-img" src="" alt="Fullscreen view representation portal" class="max-w-full max-h-[85vh] object-contain rounded border border-white/5 fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== LOGICS & INTERACTIVE ENGINES ==================== -->
+  <script>
+    // Speakers profile text data
+    const speakersDB = {
+      hazlina: {
+        name: "Dr. Hazlina Binti Hamdan",
+        title: "Head of AI Research Group",
+        org: "Faculty of Computer Science & Information Technology, Universiti Putra Malaysia",
+        country: "Malaysia",
+        img: "assets/speakers/guest_g1.webp",
+        bio: "Dr. Hazlina Binti Hamdan is a distinguished academician and lead artificial intelligence researcher. She currently serves as the Head of the AI Research Group at the Faculty of Computer Science & Information Technology, Universiti Putra Malaysia (UPM).\n\nHer primary research centers on application-oriented neural networks, big data analytics, and computational systems engineered for intelligent systems. Dr. Hamdan is highly committed to global research networking, academic leadership, and intelligent systems design, contributing key innovations to the field of artificial intelligence."
+      },
+      panduranga: {
+        name: "Professor M.V. Panduranga Rao",
+        title: "Professor",
+        org: "Indian Institute of Technology Hyderabad, Kandi-502284, Sangareddy, Telangana, India",
+        country: "India",
+        img: "assets/speakers/guest_g3.webp",
+        bio: "Professor M.V. Panduranga Rao is a Professor in the Department of Computer Science and Engineering at the Indian Institute of Technology Hyderabad, India.\n\nHis research expertise spans quantum computing, computational biology, and mathematical modeling of complex systems. With a strong academic leadership tone, he has guided numerous doctoral scholars and published extensively in premier computing journals, spearheading significant advancements in computing and research leadership."
+      },
+      saha: {
+        name: "Dr. Sriparna Saha",
+        title: "Associate Professor",
+        org: "Indian Institute of Technology Patna",
+        country: "India",
+        img: "assets/speakers/guest_g2.webp",
+        bio: "Dr. Sriparna Saha is an Associate Professor in the Department of Computer Science and Engineering at the Indian Institute of Technology Patna, India.\n\nHer research focuses on artificial intelligence, machine learning, text mining, and natural language processing. Dr. Saha is a recipient of several prestigious awards for her academic contributions and has published over 100 research papers, establishing a strong reputation in intelligent systems and machine learning research."
+      },
+      chakravarthy: {
+        name: "Dr. A. S. N. Chakravarthy",
+        title: "Professor",
+        org: "Jawaharlal Nehru Technological University, Kakinada, Andhra Pradesh, India",
+        country: "India",
+        img: "assets/speakers/guest_chakravarthy.webp",
+        bio: "Dr. A. S. N. Chakravarthy is a Professor of Computer Science and Engineering at Jawaharlal Nehru Technological University Kakinada (JNTUK), Andhra Pradesh, India.\n\nHis educational contributions and computer science research focus on cryptography, network security, and cyber forensics. He has spearheaded various academic initiatives and has guided numerous research projects, contributing significantly to computational security education and engineering research."
+      },
+      sinha: {
+        name: "Mr. Ranjan Sinha",
+        title: "Chief Technology Officer for watsonx in IBM Research AI",
+        org: "IBM Research AI & Vice President of IEEE Computer Society Bay Area Chapter",
+        country: "USA",
+        img: "assets/speakers/speaker_k3.webp",
+        bio: "Mr. Ranjan Sinha is the Chief Technology Officer for watsonx in IBM Research AI and the Vice President of the IEEE Computer Society Bay Area Chapter.\n\nHe is a prominent technology executive with decades of industry expertise in enterprise AI, machine learning, and scalable platforms. Under his leadership at IBM Research, he spearheads AI innovation, driving Watsonx technology advancements and directing industry-leading enterprise AI strategies."
+      },
+      raorao: {
+        name: "Mr. Budaraju Raja Rao",
+        title: "Information Technology Professional, Sr. Technical Staff",
+        org: "Oracle America Inc, CA, USA",
+        country: "USA",
+        img: "assets/speakers/speaker_k1.webp",
+        bio: "Mr. Budaraju Raja Rao is an Information Technology Professional and Senior Technical Staff Member at Oracle America Inc, California, USA.\n\nHe possesses extensive industry expertise in enterprise systems, scalable software architecture, and cloud infrastructure. His technology leadership has driven significant industry innovation in high-availability database environments and enterprise-grade software engineering platforms."
+      },
+      prasetyo: {
+        name: "Dr. Judhi Prasetyo FHEA MSc",
+        title: "Senior Lecturer Computer Engineering and Informatics",
+        org: "Head & Founder, RoboTechX Lab, Middlesex University, Dubai",
+        country: "Dubai, UAE",
+        img: "assets/speakers/speaker_k2.webp",
+        bio: "Dr. Judhi Prasetyo is a Senior Lecturer in Computer Engineering and Informatics, and the Head & Founder of RoboTechX Lab at Middlesex University, Dubai.\n\nAs a Fellow of the Higher Education Academy (FHEA), his academic innovation lies in the intersection of robotics, intelligent autonomous systems, and advanced human-robot interaction. He has published widely in robotics education and research, guiding pioneering student and industrial research projects in the UAE."
+      }
+    };
+
+    // Safe initialization wrapper to avoid script crashes blocking rendering
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // A. High-Performance Inertial Reveal Physics Scroll Engine
+      try {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-active');
+            } else {
+              entry.target.classList.remove('reveal-active');
+            }
+          });
+        }, {
+          threshold: 0.05,
+          rootMargin: "0px 0px -40px 0px"
+        });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+          el.classList.add('reveal-init');
+          revealObserver.observe(el);
+        });
+      } catch (err) {
+        console.error("IntersectionObserver reveal engine error: ", err);
+      }
+
+      // B. Symmetrical Sticky Navbar Scroll-Linked Collapse Toggles
+      try {
+        const header = document.getElementById('main-header');
+        const mobileBrandWrap = document.getElementById('mobile-brand-wrap');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        if (header) {
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                if (window.scrollY > 40) {
+                  header.style.background = 'rgba(17, 24, 27, 0.92)';
+                  header.style.backdropFilter = 'blur(16px)';
+                  header.style.webkitBackdropFilter = 'blur(16px)';
+                  header.classList.remove('py-4', 'border-transparent');
+                  header.classList.add('py-2', 'border-white/5', 'shadow-md', 'scrolled');
+                  
+                  if (mobileBrandWrap) {
+                    mobileBrandWrap.style.opacity = '0';
+                    mobileBrandWrap.style.maxHeight = '0px';
+                    mobileBrandWrap.style.paddingBottom = '0px';
+                    mobileBrandWrap.style.overflow = 'hidden';
+                  }
+                } else {
+                  header.style.background = 'transparent';
+                  header.style.backdropFilter = 'none';
+                  header.style.webkitBackdropFilter = 'none';
+                  header.classList.remove('py-2', 'border-white/5', 'shadow-md', 'scrolled');
+                  header.classList.add('py-4', 'border-transparent');
+                  
+                  if (mobileBrandWrap) {
+                    mobileBrandWrap.style.opacity = '1';
+                    mobileBrandWrap.style.maxHeight = '50px';
+                    mobileBrandWrap.style.paddingBottom = '8px';
+                  }
+                }
+                ticking = false;
+              });
+              ticking = true;
+            }
+          }, { passive: true });
+        }
+      } catch (err) {
+        console.error("Navbar scroll-linked collapse styling error: ", err);
+      }
+
+      // Mobile Hamburger menu drawer toggle
+      try {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+        const menuIconClosed = document.getElementById('menu-icon-closed');
+        const menuIconOpened = document.getElementById('menu-icon-opened');
+
+        if (mobileMenuBtn && mobileMenuDrawer) {
+          mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuDrawer.classList.toggle('hidden');
+            if (menuIconClosed && menuIconOpened) {
+              menuIconClosed.classList.toggle('hidden');
+              menuIconOpened.classList.toggle('hidden');
+            }
+          });
+        }
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            if (mobileMenuDrawer) mobileMenuDrawer.classList.add('hidden');
+            if (menuIconClosed) menuIconClosed.classList.remove('hidden');
+            if (menuIconOpened) menuIconOpened.classList.add('hidden');
+            if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      } catch (err) {
+        console.error("Mobile navigation drawer error: ", err);
+      }
+
+      // C. Cinematic Carousel Background Slides (4000ms loop timer, smooth crossfade only, no zoom chaos)
+      try {
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        if (slides.length > 0) {
+          setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }, 4000);
+        }
+      } catch (err) {
+        console.error("Cinematic hero carousel error: ", err);
+      }
+
+      // D. Inter-Tab Institution Details Overview (About Section)
+      try {
+        const tabCollege = document.getElementById('about-tab-college');
+        const tabCse = document.getElementById('about-tab-cse');
+        const tabConf = document.getElementById('about-tab-conf');
+        const tabIndicator = document.getElementById('tab-sliding-indicator');
+
+        const contentCollege = document.getElementById('about-content-college');
+        const contentCse = document.getElementById('about-content-cse');
+        const contentConf = document.getElementById('about-content-conf');
+
+        function updateAboutTab(activeTab, activeContent, offsetPercent) {
+          if (contentCollege && contentCse && contentConf) {
+            [contentCollege, contentCse, contentConf].forEach(content => content.classList.add('hidden'));
+            activeContent.classList.remove('hidden');
+          }
+          if (tabCollege && tabCse && tabConf) {
+            [tabCollege, tabCse, tabConf].forEach(tab => {
+              tab.classList.remove('text-teal-active');
+              tab.classList.add('text-slateGray');
+            });
+            activeTab.classList.remove('text-slateGray');
+            activeTab.classList.add('text-teal-active');
+          }
+          if (tabIndicator) {
+            tabIndicator.style.left = offsetPercent;
+          }
+        }
+
+        if (tabCollege && contentCollege) {
+          tabCollege.addEventListener('click', () => updateAboutTab(tabCollege, contentCollege, '0%'));
+        }
+        if (tabCse && contentCse) {
+          tabCse.addEventListener('click', () => updateAboutTab(tabCse, contentCse, '33.333%'));
+        }
+        if (tabConf && contentConf) {
+          tabConf.addEventListener('click', () => updateAboutTab(tabConf, contentConf, '66.666%'));
+        }
+      } catch (err) {
+        console.error("About tab slide indicator error: ", err);
+      }
+
+      // E. Space-Saving Committees Tab Container (Calculating offsets dynamically for variable widths)
+      try {
+        const tabs = {
+          advisory: document.getElementById('comm-tab-advisory'),
+          technical: document.getElementById('comm-tab-technical'),
+          editorial: document.getElementById('comm-tab-editorial'),
+          programme: document.getElementById('comm-tab-programme')
+        };
+        const contents = {
+          advisory: document.getElementById('comm-content-advisory'),
+          technical: document.getElementById('comm-content-technical'),
+          editorial: document.getElementById('comm-content-editorial'),
+          programme: document.getElementById('comm-content-programme')
+        };
+        const indicator = document.getElementById('comm-tab-indicator');
+
+        function selectCommitteeTab(key) {
+          // Hide all content areas, display active
+          Object.keys(contents).forEach(cKey => {
+            if (contents[cKey]) contents[cKey].classList.add('hidden');
+          });
+          if (contents[key]) contents[key].classList.remove('hidden');
+
+          // Remove classes from all tab buttons
+          Object.keys(tabs).forEach(tKey => {
+            if (tabs[tKey]) {
+              tabs[tKey].classList.remove('text-teal-active');
+              tabs[tKey].classList.add('text-slateGray');
+            }
+          });
+          
+          const activeTab = tabs[key];
+          if (activeTab) {
+            activeTab.classList.remove('text-slateGray');
+            activeTab.classList.add('text-teal-active');
+            
+            // Adjust sliding teal indicator under text button dynamically
+            if (indicator) {
+              indicator.style.left = activeTab.offsetLeft + 'px';
+              indicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        }
+
+        // Add listeners
+        Object.keys(tabs).forEach(key => {
+          if (tabs[key]) {
+            tabs[key].addEventListener('click', () => selectCommitteeTab(key));
+          }
+        });
+
+        // Initialize indicator position for default advisory tab
+        setTimeout(() => {
+          selectCommitteeTab('advisory');
+        }, 300);
+
+        // Re-align tab indicator on window resize
+        window.addEventListener('resize', () => {
+          const activeTabKey = Object.keys(tabs).find(k => tabs[k] && tabs[k].classList.contains('text-teal-active'));
+          if (activeTabKey) {
+            const activeTab = tabs[activeTabKey];
+            if (activeTab && indicator) {
+              indicator.style.left = activeTab.offsetLeft + 'px';
+              indicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        });
+
+      } catch (err) {
+        console.error("Committee board tab switcher error: ", err);
+      }
+
+      // E2. Space-Saving Internal Committees Tab Container
+      try {
+        const internalTabs = {
+          logistics: document.getElementById('internal-comm-tab-logistics'),
+          registration: document.getElementById('internal-comm-tab-registration'),
+          technical: document.getElementById('internal-comm-tab-technical')
+        };
+        const internalContents = {
+          logistics: document.getElementById('internal-comm-content-logistics'),
+          registration: document.getElementById('internal-comm-content-registration'),
+          technical: document.getElementById('internal-comm-content-technical')
+        };
+        const internalIndicator = document.getElementById('internal-comm-tab-indicator');
+
+        function selectInternalCommitteeTab(key) {
+          // Hide all content areas, display active
+          Object.keys(internalContents).forEach(cKey => {
+            if (internalContents[cKey]) internalContents[cKey].classList.add('hidden');
+          });
+          if (internalContents[key]) internalContents[key].classList.remove('hidden');
+
+          // Remove classes from all tab buttons
+          Object.keys(internalTabs).forEach(tKey => {
+            if (internalTabs[tKey]) {
+              internalTabs[tKey].classList.remove('text-teal-active');
+              internalTabs[tKey].classList.add('text-slateGray');
+            }
+          });
+          
+          const activeTab = internalTabs[key];
+          if (activeTab) {
+            activeTab.classList.remove('text-slateGray');
+            activeTab.classList.add('text-teal-active');
+            
+            // Adjust sliding teal indicator under text button dynamically
+            if (internalIndicator) {
+              internalIndicator.style.left = activeTab.offsetLeft + 'px';
+              internalIndicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        }
+
+        // Add listeners
+        Object.keys(internalTabs).forEach(key => {
+          if (internalTabs[key]) {
+            internalTabs[key].addEventListener('click', () => selectInternalCommitteeTab(key));
+          }
+        });
+
+        // Initialize indicator position for default logistics tab
+        setTimeout(() => {
+          selectInternalCommitteeTab('logistics');
+        }, 300);
+
+        // Re-align tab indicator on window resize
+        window.addEventListener('resize', () => {
+          const activeTabKey = Object.keys(internalTabs).find(k => internalTabs[k] && internalTabs[k].classList.contains('text-teal-active'));
+          if (activeTabKey) {
+            const activeTab = internalTabs[activeTabKey];
+            if (activeTab && internalIndicator) {
+              internalIndicator.style.left = activeTab.offsetLeft + 'px';
+              internalIndicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        });
+
+      } catch (err) {
+        console.error("Internal Committee board tab switcher error: ", err);
+      }
+
+      // E3. Space-Saving Gallery Tab Container
+      try {
+        const galleryTabs = {
+          inaugural: document.getElementById('gallery-tab-inaugural'),
+          technical: document.getElementById('gallery-tab-technical'),
+          valedictory: document.getElementById('gallery-tab-valedictory')
+        };
+        const galleryContents = {
+          inaugural: document.getElementById('gallery-content-inaugural'),
+          technical: document.getElementById('gallery-content-technical'),
+          valedictory: document.getElementById('gallery-content-valedictory')
+        };
+        const galleryIndicator = document.getElementById('gallery-tab-indicator');
+
+        function selectGalleryTab(key) {
+          // Hide all content areas, display active
+          Object.keys(galleryContents).forEach(cKey => {
+            if (galleryContents[cKey]) galleryContents[cKey].classList.add('hidden');
+          });
+          if (galleryContents[key]) galleryContents[key].classList.remove('hidden');
+
+          // Remove classes from all tab buttons
+          Object.keys(galleryTabs).forEach(tKey => {
+            if (galleryTabs[tKey]) {
+              galleryTabs[tKey].classList.remove('text-teal-active');
+              galleryTabs[tKey].classList.add('text-slateGray');
+            }
+          });
+          
+          const activeTab = galleryTabs[key];
+          if (activeTab) {
+            activeTab.classList.remove('text-slateGray');
+            activeTab.classList.add('text-teal-active');
+            
+            // Adjust sliding teal indicator under text button dynamically
+            if (galleryIndicator) {
+              galleryIndicator.style.left = activeTab.offsetLeft + 'px';
+              galleryIndicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        }
+
+        // Add listeners
+        Object.keys(galleryTabs).forEach(key => {
+          if (galleryTabs[key]) {
+            galleryTabs[key].addEventListener('click', () => selectGalleryTab(key));
+          }
+        });
+
+        // Initialize indicator position for default inaugural tab
+        setTimeout(() => {
+          selectGalleryTab('inaugural');
+        }, 300);
+
+        // Re-align tab indicator on window resize
+        window.addEventListener('resize', () => {
+          const activeTabKey = Object.keys(galleryTabs).find(k => galleryTabs[k] && galleryTabs[k].classList.contains('text-teal-active'));
+          if (activeTabKey) {
+            const activeTab = galleryTabs[activeTabKey];
+            if (activeTab && galleryIndicator) {
+              galleryIndicator.style.left = activeTab.offsetLeft + 'px';
+              galleryIndicator.style.width = activeTab.offsetWidth + 'px';
+            }
+          }
+        });
+
+      } catch (err) {
+        console.error("Gallery tab switcher error: ", err);
+      }
+
+      // F. Scroll-Linked Milestone Timeline Progress Line
+      try {
+        const timelineContainer = document.getElementById('timeline-container');
+        const timelineFillLine = document.getElementById('timeline-fill-line');
+
+        if (timelineContainer && timelineFillLine) {
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              window.requestAnimationFrame(() => {
+                const containerRect = timelineContainer.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                const startFillTrigger = viewportHeight * 0.75;
+                const endFillTrigger = viewportHeight * 0.35;
+                
+                const containerTopFromTrigger = startFillTrigger - containerRect.top;
+                const totalFillableHeight = containerRect.height;
+                
+                let percent = (containerTopFromTrigger / totalFillableHeight) * 100;
+                percent = Math.max(0, Math.min(100, percent));
+                
+                timelineFillLine.style.height = `${percent}%`;
+
+                // Timeline Node dot highlighting
+                const nodes = document.querySelectorAll('.timeline-node');
+                nodes.forEach((node) => {
+                  const nodeRect = node.getBoundingClientRect();
+                  const nodeTrigger = viewportHeight * 0.55;
+                  const dot = node.querySelector('.rounded-full');
+                  if (dot) {
+                    if (nodeRect.top < nodeTrigger) {
+                      dot.classList.remove('border-slate-200');
+                      dot.classList.add('border-teal-active', 'bg-teal-light');
+                    } else {
+                      dot.classList.remove('border-teal-active', 'bg-teal-light');
+                      dot.classList.add('border-slate-200');
+                    }
+                  }
+                });
+                ticking = false;
+              });
+              ticking = true;
+            }
+          }, { passive: true });
+        }
+      } catch (err) {
+        console.error("Timeline scroll fill path line error: ", err);
+      }
+
+      // High-Performance Desktop Mouse Drag-to-Scroll for Gallery and Press Tracks
+      try {
+        const tracks = document.querySelectorAll('.gallery-track');
+        tracks.forEach(track => {
+          let isDown = false;
+          let startX;
+          let scrollLeft;
+          let velocity = 0;
+          let lastX;
+          let lastTime;
+
+          track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.classList.add('active-drag');
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+            
+            // For momentum physics:
+            lastX = e.pageX;
+            lastTime = Date.now();
+            velocity = 0;
+            
+            // Disable native smooth scroll snapping during manual dragging
+            track.style.scrollSnapType = 'none';
+            track.style.scrollBehavior = 'auto';
+          });
+
+          track.addEventListener('mouseleave', () => {
+            if (!isDown) return;
+            isDown = false;
+            track.classList.remove('active-drag');
+            track.style.scrollSnapType = '';
+            track.style.scrollBehavior = '';
+          });
+
+          track.addEventListener('mouseup', () => {
+            if (!isDown) return;
+            isDown = false;
+            track.classList.remove('active-drag');
+            track.style.scrollSnapType = '';
+            track.style.scrollBehavior = '';
+            
+            // Apply simple momentum physics scroll animation if dragging with velocity
+            if (Math.abs(velocity) > 0.5) {
+              let momentum = velocity * 12; // multiplier for drag throw distance
+              let startScroll = track.scrollLeft;
+              let startTime = Date.now();
+              let duration = 400; // ms
+              
+              function step() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                track.scrollLeft = startScroll - momentum * easeOut;
+                
+                if (progress < 1 && !isDown) {
+                  requestAnimationFrame(step);
+                }
+              }
+              requestAnimationFrame(step);
+            }
+          });
+
+          track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.5; // Walk multiplier
+            track.scrollLeft = scrollLeft - walk;
+            
+            // Calculate velocity:
+            const now = Date.now();
+            const dt = now - lastTime;
+            if (dt > 0) {
+              velocity = (e.pageX - lastX) / dt;
+            }
+            lastX = e.pageX;
+            lastTime = now;
+          });
+        });
+      } catch (err) {
+        console.error("Gallery drag-to-scroll setup error: ", err);
+      }
+
+    });
+
+    // G. Horizontal swipe track chevron scrolls (Gallery snap tracks)
+    function scrollTrack(trackId, amount) {
+      try {
+        const track = document.getElementById(trackId);
+        if (track) {
+          track.scrollBy({ left: amount, behavior: 'smooth' });
+        }
+      } catch (err) {
+        console.error("Track scroll step error: ", err);
+      }
+    }
+
+    // Helper to open modal with transition
+    function showModal(modalEl) {
+      if (!modalEl) return;
+      modalEl.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      // Trigger reflow to run CSS transitions
+      modalEl.offsetHeight;
+      modalEl.classList.add('modal-active');
+    }
+
+    // Helper to close modal with transition
+    function hideModal(modalEl) {
+      if (!modalEl) return;
+      modalEl.classList.remove('modal-active');
+      setTimeout(() => {
+        if (!modalEl.classList.contains('modal-active')) {
+          modalEl.classList.add('hidden');
+          const activeModals = document.querySelectorAll('.modal-active');
+          if (activeModals.length === 0) {
+            document.body.classList.remove('overflow-hidden');
+          }
+        }
+      }, 300);
+    }
+
+    // H. Drawer / Modal trigger scripts
+    function openSpeakerModal(key) {
+      try {
+        const speakerDrawer = document.getElementById('speaker-drawer');
+        const modalSpeakerImg = document.getElementById('modal-speaker-img');
+        const modalSpeakerName = document.getElementById('modal-speaker-name');
+        const modalSpeakerTitle = document.getElementById('modal-speaker-title');
+        const modalSpeakerOrg = document.getElementById('modal-speaker-org');
+        const modalSpeakerCountry = document.getElementById('modal-speaker-country');
+        const modalSpeakerBio = document.getElementById('modal-speaker-bio');
+
+        const speaker = speakersDB[key];
+        if (!speaker) return;
+
+        if (modalSpeakerImg) modalSpeakerImg.src = speaker.img;
+        if (modalSpeakerImg) modalSpeakerImg.alt = speaker.name + " profile picture image";
+        if (modalSpeakerName) modalSpeakerName.textContent = speaker.name;
+        if (modalSpeakerTitle) modalSpeakerTitle.textContent = speaker.title;
+        if (modalSpeakerOrg) modalSpeakerOrg.textContent = speaker.org;
+        if (modalSpeakerCountry) modalSpeakerCountry.textContent = speaker.country;
+        if (modalSpeakerBio) modalSpeakerBio.textContent = speaker.bio;
+
+        showModal(speakerDrawer);
+      } catch (err) {
+        console.error("Open speaker profile drawer error: ", err);
+      }
+    }
+
+    // Close speaker profile drawer
+    function closeSpeakerModal() {
+      try {
+        const speakerDrawer = document.getElementById('speaker-drawer');
+        hideModal(speakerDrawer);
+      } catch (err) {
+        console.error("Close speaker profile drawer error: ", err);
+      }
+    }
+
+    // Bank wire coordinates modal
+    function openBankModal() {
+      try {
+        const bankModal = document.getElementById('bank-modal');
+        showModal(bankModal);
+      } catch (err) {
+        console.error("Open bank payment modal error: ", err);
+      }
+    }
+
+    // Close bank wire coordinates modal
+    function closeBankModal() {
+      try {
+        const bankModal = document.getElementById('bank-modal');
+        hideModal(bankModal);
+      } catch (err) {
+        console.error("Close bank payment modal error: ", err);
+      }
+    }
+
+    // Open brochure PDF modal view
+    function openBrochureModal() {
+      try {
+        const brochureModal = document.getElementById('brochure-modal');
+        showModal(brochureModal);
+      } catch (err) {
+        console.error("Open brochure PDF modal error: ", err);
+      }
+    }
+
+    // Close brochure PDF modal view
+    function closeBrochureModal() {
+      try {
+        const brochureModal = document.getElementById('brochure-modal');
+        hideModal(brochureModal);
+      } catch (err) {
+        console.error("Close brochure PDF modal error: ", err);
+      }
+    }
+
+    // Open gallery image lightbox
+    function openLightbox(src) {
+      try {
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        if (lightboxImg) lightboxImg.src = src;
+        showModal(lightboxModal);
+      } catch (err) {
+        console.error("Open gallery image lightbox error: ", err);
+      }
+    }
+
+    // Close gallery image lightbox
+    function closeLightbox() {
+      try {
+        const lightboxModal = document.getElementById('lightbox-modal');
+        hideModal(lightboxModal);
+      } catch (err) {
+        console.error("Close gallery image lightbox error: ", err);
+      }
+    }
+
+    // Register click handlers for background overlays
+    document.addEventListener('DOMContentLoaded', () => {
+      const speakerOverlay = document.getElementById('speaker-overlay');
+      if (speakerOverlay) speakerOverlay.addEventListener('click', closeSpeakerModal);
+
+      const bankOverlay = document.getElementById('bank-overlay');
+      if (bankOverlay) bankOverlay.addEventListener('click', closeBankModal);
+
+      const lightboxModal = document.getElementById('lightbox-modal');
+      if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+          const overlay = document.getElementById('lightbox-overlay');
+          if (e.target === overlay || e.target.closest('button')) {
+            closeLightbox();
+          }
+        });
+      }
+
+      // Close overlays on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSpeakerModal();
+          closeBankModal();
+          closeBrochureModal();
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
