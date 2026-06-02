@@ -146,32 +146,52 @@
       transform: scale(1);
       opacity: 1;
     }
+
+    /* Spacious tab fade transition keyframes */
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .tab-fade-in {
+      animation: tabFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Premium space adjustment for gallery cards */
+    .gallery-track > div {
+      padding: 1rem !important; /* Expands card padding from p-3 to p-4 */
+    }
   </style>
 </head>
 <body class="selection:bg-teal-active selection:text-white overflow-x-hidden">
 
   <!-- ==================== DESKTOP SYMMETRICAL DUAL BODY LOGOS ==================== -->
   <!-- Left Margin Body Anchor: Floating CSE Department Logo circle (Fixed relative to viewport) -->
-  <div class="hidden lg:block fixed left-8 top-1/3 z-30 w-16 h-16 rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="Department of CSE">
+  <div class="hidden lg:block fixed left-8 top-1/3 z-30 w-16 h-16 lg:w-[65.5px] lg:h-[65.5px] rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="Department of CSE">
     <img src="assets/sponsors/badge_e93e8b0bb2.webp" alt="CSE Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
   </div>
 
   <!-- Right Margin Body Anchor: Floating ICAAAI Conference Logo circle (Fixed relative to viewport) -->
-  <div class="hidden lg:block fixed right-8 top-1/3 z-30 w-16 h-16 rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="ICAAAI Conference">
+  <div class="hidden lg:block fixed right-8 top-1/3 z-30 w-16 h-16 lg:w-[65.5px] lg:h-[65.5px] rounded-full border border-white/20 shadow-lg bg-white/10 backdrop-blur-sm overflow-hidden select-none" title="ICAAAI Conference">
     <img src="assets/sponsors/badge_4073bf5cd0.webp" alt="ICAAAI Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
   </div>
 
 
   <!-- Sticky Navbar (Symmetrical Premium Dark Layout - Transparent to Glass transition) -->
-  <nav id="main-header" class="fixed top-0 left-0 w-full z-50 py-4 border-b border-transparent transition-all duration-300">
+  <nav id="main-header" class="fixed top-0 left-0 w-full z-50 py-1 lg:py-4 border-b border-transparent transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Mobile View Navbar Header -->
-      <div class="flex lg:hidden items-center justify-between w-full py-1">
+      <div class="flex lg:hidden items-center justify-between w-full py-0">
         <!-- Logo and Brand Title (Stay in navbar permanently) -->
         <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bg-white p-0.5 border overflow-hidden">
-            <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          <div class="w-[67px] h-[67px] flex items-center justify-center">
+            <img src="https://srkrec.edu.in/ICAAAI-2025/img/srkr.png" alt="SRKR Logo" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
           <div class="text-[10px] text-white font-extrabold tracking-wider uppercase">ICAAAI 2026 • SRKREC</div>
         </div>
@@ -179,8 +199,8 @@
         <!-- Founder Portrait & Toggle Menu Button -->
         <div class="flex items-center gap-2">
           <!-- Founder Portrait mobile -->
-          <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20">
-            <img src="assets/srkrFounderNObg.png" alt="Founder Portrait mobile" class="w-full h-full object-cover fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20 flex items-center justify-center">
+            <img src="https://srkrec.edu.in/ICAAAI-2025/img/srkrFounderNObg.png" alt="Founder Portrait mobile" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
           <button id="mobile-menu-btn" type="button" class="w-10 h-10 flex items-center justify-center rounded text-white hover:text-teal-active focus:outline-none transition-colors">
             <svg id="menu-icon-closed" class="block h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -197,8 +217,8 @@
       <div class="hidden lg:flex items-center justify-between h-14">
         <!-- Left Margin: Official SRKR Round Emblem Badge -->
         <a href="#" class="flex items-center shrink-0">
-          <div class="w-9 h-9 rounded-full bg-white p-0.5 border border-white/40 shadow-md flex items-center justify-center overflow-hidden">
-            <img src="assets/sponsors/badge_d168c61116.webp" alt="SRKR Logo" class="w-full h-full object-contain rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          <div class="w-9 h-9 lg:w-[146px] lg:h-[146px] flex items-center justify-center">
+            <img src="https://srkrec.edu.in/ICAAAI-2025/img/srkr.png" alt="SRKR Logo" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
         </a>
 
@@ -219,12 +239,12 @@
             <i class="fa-regular fa-file-pdf"></i> Brochure
           </button>
           <!-- Coral CTA: Submit -->
-          <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-bold text-xs uppercase tracking-wider px-3.5 py-2 rounded transition-colors flex items-center gap-1.5 shadow-sm">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-bold text-xs uppercase tracking-wider px-3.5 py-2 rounded transition-colors flex items-center gap-1.5 shadow-sm">
             <i class="fa-solid fa-paper-plane"></i> Submit
           </a>
           <!-- Founder Portrait -->
-          <div class="w-9 h-9 rounded-full bg-white p-0.5 border border-white/40 shadow-md flex items-center justify-center overflow-hidden" title="Founder Secretary S.R.K. Prasad Raju">
-            <img src="assets/srkrFounderNObg.png" alt="Founder Portrait" class="w-full h-full object-cover rounded-full fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
+          <div class="w-9 h-9 lg:w-[48px] lg:h-[48px] flex items-center justify-center" title="Founder Secretary S.R.K. Prasad Raju">
+            <img src="https://srkrec.edu.in/ICAAAI-2025/img/srkrFounderNObg.png" alt="Founder Portrait" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
           </div>
         </div>
       </div>
@@ -245,7 +265,7 @@
           <button onclick="openBrochureModal(); document.getElementById('mobile-menu-drawer').classList.add('hidden');" class="w-full bg-teal-active text-white text-center py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow">
             <i class="fa-regular fa-file-pdf mr-1"></i> Brochure
           </button>
-          <a href="https://easychair.org/" target="_blank" rel="noopener" class="w-full bg-accentCoral text-white text-center py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="w-full bg-accentCoral text-white text-center py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow">
             <i class="fa-solid fa-paper-plane mr-1"></i> Submit
           </a>
         </div>
@@ -292,7 +312,7 @@
 
       <!-- Primary Symmetrical Redirect Actions (Pill shape, clean flat borders, event styling) -->
       <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="bg-accentCoral hover:bg-accentCoral/90 text-white font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
           <i class="fa-solid fa-paper-plane text-xs"></i> Submit Manuscript
         </a>
         <a href="javascript:void(0);" onclick="openBankModal()" class="bg-teal-active hover:bg-teal-active/90 text-white font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full transition-transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
@@ -320,7 +340,7 @@
       <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold tracking-wider text-white/95 divide-x divide-teal-700/50">
         <a href="javascript:void(0);" onclick="openBrochureModal()" class="hover:text-teal-active transition-colors px-3 flex items-center gap-1.5"><i class="fa-regular fa-file-pdf"></i> ICAAAI-2026 Brochure - Click to view</a>
         <a href="javascript:void(0);" onclick="openBankModal()" class="hover:text-teal-active transition-colors px-3">Registration Details</a>
-        <a href="https://easychair.org/" target="_blank" rel="noopener" class="hover:text-teal-active transition-colors px-3">Paper Submission</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="hover:text-teal-active transition-colors px-3">Paper Submission</a>
         <a href="#registration" class="hover:text-teal-active transition-colors px-3">Review Policy</a>
       </div>
     </div>
@@ -408,15 +428,15 @@
         </div>
 
         <!-- Card 3: Paper Submission -->
-        <a href="https://easychair.org/" target="_blank" rel="noopener" class="premium-card rounded-xl p-6 flex flex-col justify-between group">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="premium-card rounded-xl p-6 flex flex-col justify-between group">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded bg-blue-50 text-blue-600 flex items-center justify-center text-lg font-bold">
               <i class="fa-solid fa-paper-plane"></i>
             </div>
             <h3 class="text-sm font-bold text-charcoal uppercase tracking-wider group-hover:text-teal-active transition-colors">Paper Submission</h3>
-            <p class="text-xs text-slateGray leading-relaxed">Submit your original research papers directly using the online EasyChair conference submission system.</p>
+            <p class="text-xs text-slateGray leading-relaxed">Submit your original research papers directly using the online conference submission form.</p>
           </div>
-          <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active mt-4 flex items-center gap-1">EasyChair submission <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-teal-active mt-4 flex items-center gap-1">Online submission <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></span>
         </a>
 
       </div>
@@ -833,7 +853,7 @@
               <div class="premium-card p-6 rounded-xl inline-block sm:block relative">
                 <span class="inline-flex px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800 mb-2 uppercase tracking-wide">Deadline</span>
                 <h3 class="font-bold text-charcoal text-base">Full Paper Submission</h3>
-                <p class="text-xs text-slateGray mt-1">Submit your original research manuscript draft via EasyChair.</p>
+                <p class="text-xs text-slateGray mt-1">Submit your original research manuscript draft via the submission portal.</p>
               </div>
             </div>
             <div class="w-full sm:w-1/2 sm:pl-12 pl-12 mt-2 sm:mt-0">
@@ -1000,7 +1020,7 @@
   </section>
 
   <!-- Showcase Gallery & Press Releases Section (Showcase Gallery Strip) -->
-  <section id="gallery" class="py-16 bg-neutralLight border-b border-slate-100 scroll-reveal">
+  <section id="gallery" class="py-20 md:py-24 bg-neutralLight border-b border-slate-100 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
@@ -1010,30 +1030,30 @@
         <div class="w-12 h-1 bg-teal-active mx-auto mt-4"></div>
       </div>
 
-      <!-- Track A: ICAAAI Gallery Tab Nav Switcher -->
-      <div class="max-w-md mx-auto mb-10 relative">
-        <div id="gallery-tabs-container" class="flex flex-row items-center justify-between border-b border-slate-200 pb-3 relative">
-          <button id="gallery-tab-inaugural" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-teal-active transition-colors focus:outline-none z-10 font-semibold">
+      <!-- Track A: ICAAAI Gallery Tab Nav Switcher (Segmented Control Architecture) -->
+      <div class="max-w-xl mx-auto mb-14 relative px-4 sm:px-0">
+        <div id="gallery-tabs-container" class="flex p-1 bg-slate-200/50 rounded-xl relative items-center w-full">
+          <button id="gallery-tab-inaugural" class="gallery-tab-btn flex-1 text-center py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-teal-active transition-all duration-300 focus:outline-none z-10 font-semibold rounded-lg">
             Inaugural & Keynotes
           </button>
-          <button id="gallery-tab-technical" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold">
+          <button id="gallery-tab-technical" class="gallery-tab-btn flex-1 text-center py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-all duration-300 focus:outline-none z-10 font-semibold rounded-lg">
             Technical Sessions
           </button>
-          <button id="gallery-tab-valedictory" class="gallery-tab-btn text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-colors focus:outline-none z-10 font-semibold">
+          <button id="gallery-tab-valedictory" class="gallery-tab-btn flex-1 text-center py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slateGray hover:text-charcoal transition-all duration-300 focus:outline-none z-10 font-semibold rounded-lg">
             Valedictory & Gala
           </button>
           
-          <!-- Dynamic sliding indicator under active tab text -->
-          <div id="gallery-tab-indicator" class="absolute bottom-0 h-[3px] bg-teal-active transition-all duration-300" style="left: 0px; width: 0px;"></div>
+          <!-- Dynamic sliding indicator behind active tab text -->
+          <div id="gallery-tab-indicator" class="absolute top-1 bottom-1 bg-white rounded-lg shadow-sm transition-all duration-300 z-0"></div>
         </div>
       </div>
 
       <!-- Gallery Panel Container -->
-      <div class="max-w-6xl mx-auto mb-16">
+      <div class="max-w-6xl mx-auto mb-20 px-4">
         
         <!-- Tab 1: Inaugural & Keynotes -->
-        <div id="gallery-content-inaugural" class="block">
-          <div id="gallery-track-inaugural" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+        <div id="gallery-content-inaugural" class="block tab-fade-in">
+          <div id="gallery-track-inaugural" class="gallery-track flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
             <!-- P1 -->
             <div onclick="openLightbox('assets/gallery/gallery_2025_1.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
               <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
@@ -1126,8 +1146,8 @@
         </div>
 
         <!-- Tab 2: Technical Sessions -->
-        <div id="gallery-content-technical" class="hidden">
-          <div id="gallery-track-technical" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+        <div id="gallery-content-technical" class="hidden tab-fade-in">
+          <div id="gallery-track-technical" class="gallery-track flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
             <!-- P13 -->
             <div onclick="openLightbox('assets/gallery/gallery_2025_13.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
               <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
@@ -1220,8 +1240,8 @@
         </div>
 
         <!-- Tab 3: Valedictory & Gala -->
-        <div id="gallery-content-valedictory" class="hidden">
-          <div id="gallery-track-valedictory" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+        <div id="gallery-content-valedictory" class="hidden tab-fade-in">
+          <div id="gallery-track-valedictory" class="gallery-track flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
             <!-- P28 -->
             <div onclick="openLightbox('assets/gallery/gallery_2025_28.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
               <div class="aspect-[4/3] rounded-lg overflow-hidden mb-2 bg-slate-100">
@@ -1308,7 +1328,7 @@
       </div>
 
       <!-- Track B: Press Releases (ICAAAI 2025 PRESS) -->
-      <div>
+      <div class="border-t border-slate-200/60 pt-16 mt-16 px-4">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-xs font-bold text-charcoal uppercase tracking-widest flex items-center gap-1.5 font-semibold">
             <i class="fa-regular fa-newspaper text-teal-active"></i> ICAAAI 2025 Press Reports
@@ -1325,7 +1345,7 @@
         </div>
 
         <!-- Swipe container Track B (Pure Tailwind Carousel/Grid Hybrid) -->
-        <div id="track-b" class="gallery-track flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
+        <div id="track-b" class="gallery-track flex gap-6 lg:gap-8 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory pb-6 cursor-grab active:cursor-grabbing select-none">
           <!-- M1 -->
           <div onclick="openLightbox('assets/press/press_2025_1.webp')" class="flex-none w-72 md:w-80 snap-start bg-white rounded-xl border border-slate-200 p-3 cursor-pointer group shadow-sm hover:border-teal-active transition-colors">
             <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-slate-100 border border-slate-100">
@@ -1393,19 +1413,19 @@
       <!-- Sponsors Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto items-center justify-items-center">
         <!-- Sponsor 1 -->
-        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 lg:h-[129.5px] w-full transition-transform hover:-translate-y-1">
           <img src="assets/sponsors/sponsor_new.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
         </div>
         <!-- Sponsor 2 -->
-        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 lg:h-[129.5px] w-full transition-transform hover:-translate-y-1">
           <img src="assets/sponsors/sponsor_dept.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
         </div>
         <!-- Sponsor 3 -->
-        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 lg:h-[129.5px] w-full transition-transform hover:-translate-y-1">
           <img src="assets/sponsors/sponsor_maharshi.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
         </div>
         <!-- Sponsor 4 -->
-        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 w-full transition-transform hover:-translate-y-1">
+        <div class="premium-card bg-white p-6 rounded-xl flex items-center justify-center h-32 lg:h-[129.5px] w-full transition-transform hover:-translate-y-1">
           <img src="assets/sponsors/venue_logo.webp" alt="Sponsor Logo" class="max-h-full max-w-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
         </div>
       </div>
@@ -1428,7 +1448,7 @@
         <!-- Info Column -->
         <div class="space-y-6">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-xl border border-slate-200 bg-white p-2 flex items-center justify-center overflow-hidden shadow-sm shrink-0">
+            <div class="w-16 h-16 lg:w-[65.5px] lg:h-[65.5px] rounded-xl border border-slate-200 bg-white p-2 flex items-center justify-center overflow-hidden shadow-sm shrink-0">
               <img src="assets/sponsors/venue_logo.webp" alt="SRKR Logo" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
             </div>
             <div>
@@ -1488,7 +1508,7 @@
         <!-- Logo & Bio -->
         <div class="space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-white/10 rounded flex items-center justify-center p-1 border border-white/20 overflow-hidden">
+            <div class="w-8 h-8 lg:w-[33.5px] lg:h-[33.5px] bg-white/10 rounded flex items-center justify-center p-1 border border-white/20 overflow-hidden">
               <img src="assets/sponsors/badge_4073bf5cd0.webp" alt="ICAAAI Crest Logo visual" class="w-full h-full object-contain fade-in-img" loading="lazy" onload="this.classList.add('loaded')" decoding="async">
             </div>
             <span class="font-extrabold text-sm tracking-wider">ICAAAI 2026</span>
@@ -1515,7 +1535,7 @@
         <div>
           <h4 class="font-bold text-[10px] tracking-wider uppercase text-teal-active mb-4 font-semibold">Manuscripts</h4>
           <ul class="text-xs text-white/60 space-y-2.5">
-            <li><a href="https://easychair.org/" target="_blank" rel="noopener" class="hover:text-white transition-colors">EasyChair submission</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Online submission</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Routledge paper templates</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Peer-review guidelines</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Ethical publication norms</a></li>
@@ -1689,8 +1709,8 @@
 
         <!-- Footer -->
         <div class="bg-slate-50 px-6 py-4 flex items-center justify-between border-t border-slate-100">
-          <a href="https://easychair.org/" target="_blank" rel="noopener" class="bg-teal-active hover:bg-teal-active/90 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded transition-colors inline-flex items-center gap-1.5 shadow-sm font-semibold">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Register Here
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRK1jbuOkaeUOdslrr1pp4FXQSZmbmFDNDoj21WmcEeT7baA/closedform" target="_blank" rel="noopener noreferrer" class="bg-teal-active hover:bg-teal-active/90 text-white text-xs font-bold uppercase tracking-wider px-5 py-3 rounded transition-colors inline-flex items-center gap-1.5 shadow-sm font-semibold">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Submit Paper
           </a>
           <button onclick="closeBankModal()" type="button" class="bg-neutralDark hover:bg-neutralDark/90 text-white text-xs font-bold uppercase tracking-wider px-4 py-3 rounded transition-colors">Close</button>
         </div>
@@ -1700,33 +1720,27 @@
 
   <!-- Conference Brochure PDF Overlay Modal -->
   <div id="brochure-modal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
-    <div class="absolute inset-0 modal-backdrop-fade flex items-center justify-center p-4" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(17, 24, 27, 0.6);">
+    <div class="absolute inset-0 modal-backdrop-fade flex items-center justify-center p-4" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(0,0,0,0.75);">
       <!-- Background click dismiss overlay -->
       <div id="brochure-overlay" class="absolute inset-0" onclick="closeBrochureModal()"></div>
       
-      <!-- Modal Layout Panel -->
-      <div class="relative bg-white w-full max-w-5xl h-[85vh] rounded-2xl overflow-hidden flex flex-col z-10 shadow-2xl border border-slate-200 modal-panel-scale">
-        <!-- Header -->
-        <div class="bg-neutralDark text-white px-6 py-4 flex items-center justify-between">
-          <h3 class="text-sm font-bold uppercase tracking-wider font-semibold"><i class="fa-regular fa-file-pdf mr-2"></i> ICAAAI 2026 Conference Brochure</h3>
-          <button onclick="closeBrochureModal()" type="button" class="text-slate-400 hover:text-white focus:outline-none bg-slate-900/40 p-2 rounded-full">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <!-- Iframe container with scrolling allowed -->
-        <div class="flex-1 w-full h-full bg-slate-100 overflow-y-auto">
-          <iframe 
-            src="Broucher.pdf" 
-            class="w-full h-full border-none" 
-            style="min-height: 100%;">
-          </iframe>
-        </div>
-        <!-- Footer -->
-        <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between items-center text-xs">
-          <p class="text-slateGray">Trouble viewing? <a href="Broucher.pdf" download class="text-teal-active font-bold hover:underline">Download directly</a></p>
-          <button onclick="closeBrochureModal()" type="button" class="bg-neutralDark hover:bg-neutralDark/90 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded transition-colors">Close View</button>
+      <!-- Floating Controls in Top-Right -->
+      <div class="absolute top-4 right-4 flex items-center gap-3 z-30">
+        <a href="Broucher.pdf" download class="text-white hover:text-teal-active bg-black/40 hover:bg-black/60 p-2.5 rounded-full transition-colors flex items-center justify-center" title="Download Brochure">
+          <i class="fa-solid fa-download text-lg"></i>
+        </a>
+        <button onclick="closeBrochureModal()" type="button" class="text-white hover:text-teal-active bg-black/40 hover:bg-black/60 p-2.5 rounded-full transition-colors flex items-center justify-center" title="Close">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Layout Panel (Transparent wrapper for vertical scrolling brochure poster cards) -->
+      <div class="relative bg-transparent w-full max-w-4xl h-[90vh] flex flex-col z-10 modal-panel-scale">
+        <div class="flex-1 w-full h-full overflow-y-auto no-scrollbar space-y-6 rounded-2xl">
+          <img src="assets/brochure_page_1.webp" alt="Brochure Page 1" class="w-full h-auto rounded-2xl shadow-2xl object-contain border border-white/5" loading="lazy">
+          <img src="assets/brochure_page_2.webp" alt="Brochure Page 2" class="w-full h-auto rounded-2xl shadow-2xl object-contain border border-white/5" loading="lazy">
         </div>
       </div>
     </div>
@@ -1834,29 +1848,65 @@
         console.error("IntersectionObserver reveal engine error: ", err);
       }
 
-      // B. Symmetrical Sticky Navbar Scroll-Linked Collapse Toggles
+      // B. Symmetrical Sticky Navbar Scroll-Linked Collapse Toggles & Smart Reveal
       try {
         const header = document.getElementById('main-header');
-        const navLinks = document.querySelectorAll('.nav-link');
         
         if (header) {
           let ticking = false;
+          let lastScrollY = window.scrollY;
+          const scrollThreshold = 8; // scroll difference threshold to trigger show/hide
+          
           window.addEventListener('scroll', () => {
             if (!ticking) {
               window.requestAnimationFrame(() => {
-                if (window.scrollY > 40) {
-                  header.style.background = 'rgba(17, 24, 27, 0.92)';
-                  header.style.backdropFilter = 'blur(16px)';
-                  header.style.webkitBackdropFilter = 'blur(16px)';
-                  header.classList.remove('py-4', 'border-transparent');
-                  header.classList.add('py-2', 'border-white/5', 'shadow-md', 'scrolled');
+                const currentScrollY = window.scrollY;
+                const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+                const isMenuOpen = mobileMenuDrawer && !mobileMenuDrawer.classList.contains('hidden');
+                
+                // 1. Sticky background states (Frosted Glassmorphism)
+                if (currentScrollY > 40) {
+                  if (window.innerWidth < 1024) {
+                    header.style.background = 'rgba(15, 23, 42, 0.65)';
+                    header.style.backdropFilter = 'blur(12px)';
+                    header.style.webkitBackdropFilter = 'blur(12px)';
+                    header.classList.remove('py-1', 'py-2', 'py-4', 'border-transparent');
+                    header.classList.add('py-0.5', 'border-white/5', 'shadow-md', 'scrolled');
+                  } else {
+                    header.style.background = 'rgba(17, 24, 27, 0.92)';
+                    header.style.backdropFilter = 'blur(16px)';
+                    header.style.webkitBackdropFilter = 'blur(16px)';
+                    header.classList.remove('py-4', 'border-transparent');
+                    header.classList.add('py-2', 'border-white/5', 'shadow-md', 'scrolled');
+                  }
                 } else {
                   header.style.background = 'transparent';
                   header.style.backdropFilter = 'none';
                   header.style.webkitBackdropFilter = 'none';
-                  header.classList.remove('py-2', 'border-white/5', 'shadow-md', 'scrolled');
-                  header.classList.add('py-4', 'border-transparent');
+                  header.classList.remove('py-0.5', 'py-1', 'py-1.5', 'py-2', 'border-white/5', 'shadow-md', 'scrolled');
+                  if (window.innerWidth < 1024) {
+                    header.classList.add('py-1', 'border-transparent');
+                  } else {
+                    header.classList.add('py-4', 'border-transparent');
+                  }
                 }
+                
+                // 2. Smart scroll-up reveal logic (triggers past hero section)
+                if (isMenuOpen || currentScrollY <= window.innerHeight) {
+                  // Force visible if mobile menu drawer is open or we are within/above the hero section
+                  header.style.transform = 'translateY(0)';
+                } else {
+                  const diff = currentScrollY - lastScrollY;
+                  if (diff > scrollThreshold) {
+                    // Scrolling down: hide navbar
+                    header.style.transform = 'translateY(-100%)';
+                  } else if (diff < -scrollThreshold) {
+                    // Scrolling up: reveal navbar
+                    header.style.transform = 'translateY(0)';
+                  }
+                }
+                
+                lastScrollY = currentScrollY;
                 ticking = false;
               });
               ticking = true;
@@ -1864,7 +1914,7 @@
           }, { passive: true });
         }
       } catch (err) {
-        console.error("Navbar scroll-linked collapse styling error: ", err);
+        console.error("Navbar scroll styling and smart reveal error: ", err);
       }
 
       // Mobile Hamburger menu drawer toggle
